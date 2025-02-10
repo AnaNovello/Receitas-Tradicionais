@@ -1,0 +1,360 @@
+@font-face {
+    font-family: 'BlippoBlack';
+    src: url(Fontes/BlippoBlack.ttf);
+}
+@font-face {
+    font-family: 'rockwell-extra-bold';
+    src: url(Fontes/rockwell-extra-bold.ttf);
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    margin: 0 auto;
+    width: 50%;
+    position: relative;
+}
+
+.menu_principal{
+    background-color: #EC8D34;
+    width: 100%;
+    height: 140px;
+    border-radius: 0px 0px 60px 60px;
+}
+
+.header_inicial{
+    align-items: center;
+    display: flex;
+    justify-content: center; 
+}
+
+.logo{
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.redes_sociais ul li{
+    position: bottom;
+    bottom: 50%;
+    display: block;
+    float: left;
+    margin-left: 20px
+}
+
+ul{
+    padding: 0px!important;
+}
+
+.redes_sociais{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    float: right;
+    width: 20%;
+}
+
+.header_2{
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    border-bottom: 5px solid #E6E6E6;
+    position: relative;
+    box-sizing: border-box;
+    top: 12px;
+}
+
+.p_1{
+    font-family: 'sans-serif';
+    color: #242321;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+}
+
+.menu ul li a.menu_inicio{
+    color: #f48c2b;
+}
+
+/*.menu ul li a.menu_inicio:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: -20px;
+    background-color: #f48c2b;
+}*/
+
+.menu ul li{
+    display: inline-block;
+    color: #242321;
+    margin-left: 35px;
+    position: relative;
+    bottom: 50%;
+}
+
+.menu ul li:hover{
+    color: #f48c2b !important;
+}
+
+
+.menu ul li a{
+    font-family: 'BlippoBlack';
+    color: #242321;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu ul li a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: -20px; /* Mantém a linha na mesma altura da borda */
+    background-color: #f48c2b;
+    transition: width 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.menu ul li a:hover:before {
+    width: 100% !important; /* Largura total ao passar o mouse */
+}
+
+.menu_urls{
+    position: relative;
+    z-index: 10;
+}
+
+.menu_urls .menu ul li:hover {
+    color: #f48c2b;
+}
+
+.busca{
+    position: absolute;
+    max-width: fit-content;
+    width: 70%;
+    bottom: 30%;
+    left: 78%;
+    font-size: 13px;
+}
+
+.busca input{
+    height: 30px;
+    width: 174px;
+    margin-left: auto;
+    margin-right: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 10px;
+    background-image: url('/img/figideira_v2.png');
+    background-repeat: no-repeat;
+    background-position: 95% 2px;
+    border: 2px solid #E6E6E6;
+}
+
+.col_100{
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.ranking {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    /*align-items: center; Centraliza o conteúdo verticalmente */
+    height: 100%; /* Ajusta a altura para preencher o espaço disponível */
+}
+
+.maior_acesso {
+    text-align: center;
+}
+
+.maior_acesso ul {
+    list-style-type: none; /* Remove as bolinhas de listagem */
+    padding: 0; /* Remove o espaçamento interno do UL */
+    margin: 40px; /* Remove margens externas */
+}
+
+.texto_rank {
+    font-family: 'rockwell-extra-bold'; /* Mantenha a fonte consistente */
+    font-size: 24px; /* Ajuste o tamanho do texto conforme necessário */
+    color: #f48c2b; /* Cor do texto */
+    text-transform: uppercase;
+    margin: 0; /* Remove margens extras */
+    display: block; /* Garante que o texto ocupe toda a linha */
+}
+
+.slider_m_acesso{
+    margin: 0 auto;
+    width: 980px;
+    height: 300px;
+    overflow: hidden;
+    /*border: 3px solid #242321;*/
+}
+
+.slides{
+    width: 500%;
+    height: 300px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    position: relative;
+    transition: margin-left 2s ease;
+}
+
+.slide img{
+    width: 980px;
+    height: 300px;
+}
+
+.nav_manual{
+    position: absolute;
+    width: 980px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 3px solid #ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 60px;
+}
+
+.manual-btn:hover{
+    background-color: #ffffff;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -60%;
+}
+
+#radio5:checked ~ .first {
+    margin-left: -80%;
+}
+
+.nav_auto div{
+    border: 2px solid #f70707;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer; 
+    transition: 1s;
+}
+
+.nav_auto{
+    position: absolute;
+    width: 980px;
+    margin-top: 261px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav_auto div:not(:last-child){
+    margin-right: 62px;
+}
+
+#radio1:checked ~.nav_auto .auto_btn1{
+    background-color: #f48c2b;
+}
+
+#radio2:checked ~.nav_auto .auto_btn2{
+    background-color: #f48c2b;
+}
+
+#radio3:checked ~.nav_auto .auto_btn3{
+    background-color: #f48c2b;
+}
+
+#radio4:checked ~.nav_auto .auto_btn4{
+    background-color: #f48c2b;
+}
+
+#radio5:checked ~.nav_auto .auto_btn5{
+    background-color: #f48c2b;
+}
+
+.rodape {
+    background-color: #302f2c; /* Cor de fundo do rodapé */
+    color: #E6E6E6; /* Cor do texto */
+    padding: 20px 0; /* Espaçamento interno no rodapé */
+    text-align: center; /* Centraliza o texto */
+    width: 100%;
+    border-radius: 60px 60px 0px 0px;
+}
+
+.rodape_conteudo {
+    max-width: 980px;
+    margin: 0 auto; /* Centraliza o conteúdo do rodapé */
+}
+
+.rodape p {
+    margin: 5px 0; /* Margem entre os parágrafos */
+}
+
+.rodape_redes_sociais {
+    margin-top: 10px; /* Espaçamento acima das redes sociais */
+}
+
+.rodape_redes_sociais a {
+    margin: 0 10px; /* Espaçamento entre os ícones das redes sociais */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave ao passar o mouse */
+}
+
+.rodape_redes_sociais a:hover {
+    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+}
+
+.sobre_container{
+    padding-top: 10px;
+}
+
+.apresentacao{
+    position: relative;
+    bottom: 50px;
+}
+
+.p_1{
+    font-family: 'Times New Roman', Times, serif;
+    color: #242321;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+    top: 0px;
+}
