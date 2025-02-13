@@ -5,8 +5,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReceitaController;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('inicial');
+})->name('home');
+
+Route::get('/receitas', [ReceitaController::class, 'index'])->name('receitas');
 
 //Route::get('/', [ReceitaController::class, 'index']);
 

@@ -26,11 +26,11 @@
             <div class="menu">
                 <ul>
                     <li>
-                        <a class="menu_inicio" href="../welcome.blade.php" target="_self">Início</a>
+                        <a class="menu_inicio" href="{{ route('home')  }}" target="_self">Início</a>
                     </li>
 
                     <li>
-                        <a class="menu_tot_receitas" href="../receitas.blade.php" target="_self">Todas as receitas</a>
+                        <a class="menu_tot_receitas" href="{{ route('receitas')  }}" target="_self">Todas as receitas</a>
                     </li>
                     
                     <li>

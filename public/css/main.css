@@ -7,18 +7,17 @@
     src: url(Fontes/rockwell-extra-bold.ttf);
 }
 
-body{
+html, body{
     height: 100%;
     width: 100%;
     margin: 0 auto;
+    padding: 0;
     display: flex;
     flex-direction: column;
 }
 
 main{
-    margin: 0 auto;
-    width: 50%;
-    position: relative;
+    flex: 1;
 }
 
 .menu_principal{
