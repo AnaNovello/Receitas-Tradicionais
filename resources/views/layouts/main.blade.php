@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel = "stylesheet" type="text/css" href="./css/main.css">
+    <link rel = "stylesheet" type="text/css" href="./css/app.css">
     <title>@yield('title')</title>
 </head>
 
@@ -47,9 +48,23 @@
                 </ul>
             </div>
 
-            <div class="busca">
+            @if (Route::has('login'))
+                <div>
+                    @auth
+                        <a href="{{ url('/dashboard') }}">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Registrar</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+
+
+            <!-- <div class="busca">
                 <input placeholder="Procure uma receita!" type="text"/>
-            </div>
+            </div> -->
             
         </div>
     </main>
