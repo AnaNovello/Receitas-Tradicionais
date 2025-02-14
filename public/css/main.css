@@ -66,9 +66,13 @@ ul{
     max-width: 980px;
     margin: 0 auto;
     border-bottom: 5px solid #E6E6E6;
-    position: relative;
     box-sizing: border-box;
     top: 12px;
+    
+    display: flex; /* Ativa o Flexbox */
+    align-items: center; /* Alinha verticalmente os itens */
+    justify-content: space-between; /* Mantém os elementos separados */
+    padding: 10px 20px; /* Adiciona espaçamento interno */
 }
 
 .p_1{
@@ -79,6 +83,19 @@ ul{
     margin: 0 auto;
     position: relative;
     top: 20px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul{
+    display: flex; /* Faz os itens ficarem em linha */
+    align-items: center; /* Alinha os itens verticalmente */
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .menu ul li a.menu_inicio{
@@ -95,11 +112,12 @@ ul{
 }*/
 
 .menu ul li{
-    display: inline-block;
+    margin: 0 20px; /* Espaçamento lateral */
+    position: static; /* Remove position: relative */
+    /*display: inline-block;
     color: #242321;
     margin-left: 35px;
-    position: relative;
-    bottom: 50%;
+    position: relative;*/
 }
 
 .menu ul li:hover{
@@ -149,6 +167,13 @@ ul{
     font-size: 13px;
 }
 
+.login {
+    display: flex;
+    align-items: center; /* Centraliza os botões verticalmente */
+    gap: 15px; /* Espaçamento entre os botões */
+}
+
+
 .login a{
     max-width: fit-content;
     padding: 8px 15px;
@@ -157,7 +182,7 @@ ul{
     font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
-    transition: 0.3 ease;
+    transition: all 0.3s ease-in-out;
 }
 
 .login a:hover{
