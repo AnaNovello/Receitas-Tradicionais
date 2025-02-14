@@ -49,7 +49,7 @@
             </div>
 
             @if (Route::has('login'))
-                <div>
+                <div class="login">
                     @auth
                         <a href="{{ url('/dashboard') }}">Dashboard</a>
                     @else

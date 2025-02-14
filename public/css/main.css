@@ -149,6 +149,21 @@ ul{
     font-size: 13px;
 }
 
+.login a{
+    max-width: fit-content;
+    padding: 8px 15px;
+    color: #242321;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3 ease;
+}
+
+.login a:hover{
+    color: #EC8D34;
+}
+
 .busca input{
     height: 30px;
     width: 174px;
