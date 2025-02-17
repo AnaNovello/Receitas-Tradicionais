@@ -10,6 +10,7 @@ class ReceitaController extends Controller
     public function index(){
         $receitas = Receita::all();
 
-        return view('receitas', ['receitas' => $receitas]);
+        //return view('receitas', ['receitas' => $receitas]);
+        return view('receitas');
     }
 }

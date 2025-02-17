@@ -7,6 +7,10 @@
 <header class="header_receitas">
         <main class="receitas">
             <div class="header_3">
+                <div class="search-container">
+                    <input type="text" id="search" placeholder="Buscar" onkeyup="filtrarReceitas()">
+                </div>
+
                 <div class="lista_receitas">
                     <ul>
                         <li>
@@ -41,5 +45,17 @@
             </div>
         </main>
     </header>
+
+   <!-- <script>
+        function filtrarReceitas() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let lista = document.querySelectorAll(".lista_receitas ul li");
+
+            lista.forEach(li => {
+                let textoReceita = li.textContent.toLowerCase();
+                li.style.display = textoReceita.includes(input) ? "block" : "none";
+            });
+        }
+    </script> -->
 
 @endsection

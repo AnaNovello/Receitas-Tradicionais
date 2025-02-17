@@ -23,12 +23,6 @@ main{
     position: relative;
 }
 
-.menu_principal{
-    background-color: #E6E6E6;
-    width: 100%;
-    height: 140px;
-}
-
 .header_inicial{
     position: relative;
 }
@@ -91,6 +85,10 @@ ul{
     color: #f48c2b;
 }
 
+.menu ul li a.menu_inicio{
+    color: #242321;
+}
+
 
 .menu ul li a:before {
     content: "";
@@ -146,6 +144,7 @@ ul{
 .apresentacao{
     position: relative;
     z-index: 1;
+    padding: 0px;
 }
 
 .p_1{
@@ -156,9 +155,11 @@ ul{
     margin: 0 auto;
     position: relative;
     top: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 .sobre_container{
-    padding-bottom: 50px;
+    padding-bottom: 0px;
 }
 
 .rodape {
@@ -191,4 +192,48 @@ ul{
 
 .rodape_redes_sociais a:hover {
     transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+}
+
+.sobre_lista {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 980px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.sobre_lista p {
+    display: flex;
+    align-items: flex-start; /* Alinha tudo ao topo */
+    gap: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+    flex-wrap: nowrap;
+    text-align: left;
+}
+
+.sobre_lista b {
+    flex-shrink: 0;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top; /* Garante alinhamento pela primeira linha */
+}
+
+.sobre_lista .texto {
+    flex: 1;
+    /*align-self: flex-start; /* Garante que fique alinhado ao topo */
+    display: inline;
+}
+
+.sobre_lista p:hover {
+    transform: translateX(10px);
+}
+
+.icone {
+    flex-shrink: 0;
+    font-size: 22px;
 }

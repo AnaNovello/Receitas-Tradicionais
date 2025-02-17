@@ -72,14 +72,9 @@
                     <div class="sobre_container">
                         <header class="apresentacao">
                             <p class="p_1">
-                                O <b>Tradição Brasileira</b> surgiu como uma proposta de servir como acervo digital para receitas culturais e tradicionais. O objetivo de nossa plataforma é manter a integridade cultural das receitas e que, do mesmo modo, facilite o acesso ao conhecimento de forma concentrada e confiável. Salientamos que todas as receitas presentes no site foram minuciosamente avaliadas e aprovadas por nossa equipe através de pesquisas detalhadas e apuradas, visando fornecer a maior integridade as raízes culinárias em questão.
+                            O <b>Tradição Brasileira</b> surgiu como uma proposta de servir como acervo digital para receitas culturais e tradicionais brasileiras. O objetivo da plataforma é manter a integridade cultural das receitas e que, do mesmo modo, facilite o acesso ao conhecimento de forma concentrada e confiável. Todas as receitas presentes no site foram minuciosamente avaliadas e aprovadas por nossa equipe através de pesquisas detalhadas e apuradas, visando fornecer a maior integridade as raízes culinárias.
                             </p>
-                            <p class="p_1">
-                                O <b>Tradição Brasileira</b> surgiu como uma proposta de servir como acervo digital para receitas culturais e tradicionais. O objetivo de nossa plataforma é manter a integridade cultural das receitas e que, do mesmo modo, facilite o acesso ao conhecimento de forma concentrada e confiável. Salientamos que todas as receitas presentes no site foram minuciosamente avaliadas e aprovadas por nossa equipe através de pesquisas detalhadas e apuradas, visando fornecer a maior integridade as raízes culinárias em questão.
-                            </p>
-                            <p class="p_1">
-                                O <b>Tradição Brasileira</b> surgiu como uma proposta de servir como acervo digital para receitas culturais e tradicionais. O objetivo de nossa plataforma é manter a integridade cultural das receitas e que, do mesmo modo, facilite o acesso ao conhecimento de forma concentrada e confiável. Salientamos que todas as receitas presentes no site foram minuciosamente avaliadas e aprovadas por nossa equipe através de pesquisas detalhadas e apuradas, visando fornecer a maior integridade as raízes culinárias em questão.
-                            </p>
+                            
                         </header>
                     </div> 
                 </div>

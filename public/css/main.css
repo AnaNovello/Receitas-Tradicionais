@@ -77,12 +77,15 @@ ul{
 
 .p_1{
     font-family: 'sans-serif';
+    font-size: 18px;
     color: #242321;
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
     position: relative;
     top: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 .menu {
@@ -127,7 +130,7 @@ ul{
 
 .menu ul li a{
     font-family: 'BlippoBlack';
-    color: #242321;
+    color: #3D3D3D;
     font-size: 15px;
     text-decoration: none;
     text-transform: uppercase;
@@ -177,7 +180,7 @@ ul{
 .login a{
     max-width: fit-content;
     padding: 8px 15px;
-    color: #242321;
+    color: #3D3D3D;
     font-size: 15px;
     font-weight: bold;
     text-decoration: none;
@@ -386,6 +389,7 @@ ul{
 .apresentacao{
     position: relative;
     bottom: 50px;
+    padding: 20px;
 }
 
 .p_1{
@@ -396,4 +400,5 @@ ul{
     margin: 0 auto;
     position: relative;
     top: 0px;
+    text-align: left;
 }

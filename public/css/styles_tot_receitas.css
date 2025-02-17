@@ -34,7 +34,7 @@
     cursor: pointer;
     display: block;
     padding: 10px;
-    border: 2px solid #E6E6E6;
+    border: 2px solid #e4cbb4;
     margin-bottom: 10px;
     border-radius: 5px;
     box-sizing: border-box;
@@ -52,4 +52,31 @@
 
 .menu ul li a.menu_inicio{
     color: #242321;
+}
+
+.search-container {
+    width: 100%;
+    margin: 0 auto 20px auto; /* Adiciona margem abaixo para espaçamento */
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.search-container ::placeholder{
+    opacity: 50%; 
+    color: #2e2e2e
+}
+
+#search {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #E6E6E6;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+#search:focus {
+    border-color: #f48c2b;
+    outline: none;
 }

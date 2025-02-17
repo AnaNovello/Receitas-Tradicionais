@@ -15,12 +15,6 @@ main{
     position: relative;
 }
 
-.menu_principal{
-    background-color: #E6E6E6;
-    width: 100%;
-    height: 140px;
-}
-
 .header_inicial{
     position: relative;
 }
@@ -64,12 +58,15 @@ ul{
 
 .p_1{
     font-family: 'sans-serif';
+    font-size: 18px;
     color: #242321;
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
     position: relative;
     top: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 .menu ul li{
@@ -91,6 +88,10 @@ ul{
 
 .menu ul li a.menu_contato{
     color: #f48c2b;
+}
+
+.menu ul li a.menu_inicio{
+    color: #242321;
 }
 
 .menu ul li a:before {
@@ -117,8 +118,10 @@ ul{
 }
 
 .apresentacao{
-    position: relative;
-    z-index: 1;
+    max-width: 100%; /* Mantendo a largura da borda cinza */
+    margin: 0 auto;  /* Centraliza o texto */
+    padding: 0px; /* Adiciona um espaçamento interno */
+    box-sizing: border-box; /* Garante que padding não ultrapasse o max-width */
 }
 
 .busca{
@@ -179,4 +182,60 @@ ul{
 
 .rodape_redes_sociais a:hover {
     transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+}
+
+
+
+.form-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+select, input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+.form-group-button {
+    display: flex;
+    justify-content: flex-end; /* Alinha o botão à direita */
+}
+
+button {
+    background: #6c63ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #5750e3;
 }

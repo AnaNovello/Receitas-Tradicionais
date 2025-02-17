@@ -1,16 +1,29 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReceitaController;
+use App\Http\Controllers\SobreNosController;
+use App\Http\Controllers\InicialController;
+use App\Http\Controllers\ContatoController;
 
-Route::get('/', function () {
-    return view('inicial');
-})->name('home');
-
-Route::get('/receitas', function () {
+/*Route::get('/receitas', function () {
     return view('receitas'); // Verifique se este arquivo existe em resources/views/
-})->name('receitas'); // Definindo o nome da rota
+})->name('receitas'); // Definindo o nome da rota*/
+
+//Route::get('/inicial',[InicialController::class, 'index'])->name('inicial');
+
+Route::get('/',[InicialController::class, 'index'])->name('inicial');
+
+Route::get('/receitas', [ReceitaController::class, 'index'])->name('receitas');
+
+Route::get('/categorias', [CategoriaController::class, 'index'])->name('categorias');
+
+Route::get('/sobre-nos', [SobreNosController::class, 'index'])->name('sobre_nos');
+
+Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

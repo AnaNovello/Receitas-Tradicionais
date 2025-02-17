@@ -27,7 +27,7 @@
             <div class="menu">
                 <ul>
                     <li>
-                        <a class="menu_inicio" href="{{ route('home')  }}" target="_self">Início</a>
+                        <a class="menu_inicio" href="{{ route('inicial')  }}" target="_self">Início</a>
                     </li>
 
                     <li>
@@ -35,15 +35,15 @@
                     </li>
                     
                     <li>
-                        <a class="menu_categorias" href="" target="_self">Categorias</a>
+                        <a class="menu_categorias" href="{{ route('categorias') }}" target="_self">Categorias</a>
                     </li>
                     
                     <li>
-                        <a class="menu_sobre" href="" target="_self">Sobre nós</a>
+                        <a class="menu_sobre" href="{{ route('sobre_nos') }}" target="_self">Sobre nós</a>
                     </li>
                     
                     <li>
-                        <a class="menu_contato" href="" target="_self">Contate-nos</a>
+                        <a class="menu_contato" href="{{ route('contato') }}" target="_self">Contate-nos</a>
                     </li>
                 </ul>
             </div>
