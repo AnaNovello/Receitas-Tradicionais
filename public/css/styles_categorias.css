@@ -1,148 +1,6 @@
 @font-face {
-    font-family: 'BlippoBlack';
-    src: url(Fontes/BlippoBlack.ttf);
-}
-@font-face {
-    font-family: 'rockwell-extra-bold';
-    src: url(Fontes/rockwell-extra-bold.ttf);
-}
-@font-face {
     font-family: 'NewAmsterdam-Regular';
     src: url(Fontes/NewAmsterdam-Regular.ttf);
-}
-
-body{
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-}
-
-main{
-    margin: 0 auto;
-    width: 50%;
-    position: relative;
-}
-
-.header_inicial{
-    position: relative;
-}
-
-.logo{
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-}
-
-.redes_sociais ul li{
-    position: bottom;
-    bottom: 50%;
-    display: block;
-    float: left;
-    margin-left: 20px
-}
-
-ul{
-    padding: 0px!important;
-}
-
-.redes_sociais{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    float: right;
-    width: 20%;
-}
-
-.header_2{
-    background-color: #ffffff;
-    width: 100%;
-    max-width: 980px;
-    margin: 0 auto;
-    border-bottom: 5px solid #E6E6E6;
-    position: relative;
-    box-sizing: border-box;
-}
-
-.menu ul li{
-    display: inline-block;
-    color: #242321;
-    margin-left: 35px;
-    position: relative;
-}
-
-.menu ul li a{
-    font-family: 'BlippoBlack';
-    color: #242321;
-    font-size: 15px;
-    text-decoration: none;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
-}
-
-.menu ul li a.menu_categorias{
-    color: #f48c2b;
-}
-
-.menu ul li a.menu_inicio{
-    color: #242321;
-}
-
-.menu ul li a:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 4px;
-    bottom: -20px; /* Mantém a linha na mesma altura da borda */
-    background-color: #f48c2b;
-    transition: width 0.3s ease; /* Adiciona uma transição suave */
-}
-
-.menu ul li a:hover:before {
-    width: 100% !important; /* Largura total ao passar o mouse */
-}
-
-.menu_urls{
-    position: relative;
-    z-index: 10;
-}
-
-.menu_urls .menu ul li:hover {
-    color: #f48c2b;
-}
-
-.apresentacao{
-    position: relative;
-    z-index: 1;
-}
-
-.busca{
-    position: absolute;
-    max-width: fit-content;
-    width: 70%;
-    bottom: 30%;
-    left: 78%;
-}
-
-.busca input{
-    height: 30px;
-    width: 174px;
-    margin-left: auto;
-    margin-right: 50px;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 10px;
-    background-image: url('../Img_principais/figideira_v2.png');
-    background-repeat: no-repeat;
-    background-position: 95% 2px;
-    border: 2px solid #E6E6E6;
-}
-
-.col_100{
-    width: 100%;
-    float: left;
-    position: relative;
 }
 
 .header_3 {
@@ -151,7 +9,6 @@ ul{
     margin: 0 auto;
     position: relative;
     box-sizing: border-box;
-    padding-left: 15px; /* Alinha a header_3 com a border-bottom da header_2 */
     top: 30px;
 }
 
@@ -162,74 +19,53 @@ ul{
     position: relative;
 }
 
-.maior_acesso ul {
-    list-style-type: none; /* Remove as bolinhas de listagem */
-    padding: 0;
-    margin: 0; /* Remove margens externas */
-}
-
-.maior_acesso ul li:not(:last-child){
-    margin-bottom: 30px;
-}
-.header_categorias{
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
 .l_categorias {
-    /*font-family: 'NewAmsterdam-Regular'; /* Mantém a fonte consistente */
-    font-size: 18px; /* Ajuste o tamanho do texto conforme necessário */
     text-transform: uppercase;
-    color:  #5a5a5a; /* Cor do texto */
+    color:  #5a5a5a;
     text-decoration: none;
     cursor: pointer;
     display: block;
     padding: 10px;
-    border: 2px solid #E6E6E6;
-    margin-bottom: 20px;
+    border: 2px solid #e4cbb4;
+    margin-bottom: 10px;
     border-radius: 5px;
     box-sizing: border-box;
     transition: all 0.6s ease;
 }
 
 .l_categorias:hover {
-    color: #f48c2b; /* Cor do texto ao passar o mouse */
+    color: #f48c2b;
     border-color: #f48c2b;
 }
-.rodape {
-    background-color: #302f2c; /* Cor de fundo do rodapé */
-    color: #E6E6E6; /* Cor do texto */
-    padding: 20px 0; /* Espaçamento interno no rodapé */
-    text-align: center; /* Centraliza o texto */
-    width: 100%;
-    position: relative;
-    bottom: 0;
+
+.menu ul li a.menu_categorias{
+    color: #f48c2b;
 }
 
-.rodape_conteudo {
-    max-width: 980px;
-    margin: 0 auto; /* Centraliza o conteúdo do rodapé */
+.menu ul li a.menu_inicio{
+    color: #242321;
 }
 
-.rodape p {
-    margin: 5px 0; /* Margem entre os parágrafos */
+.maior_acesso {
+    text-align: left;
 }
 
-.rodape_redes_sociais {
-    margin-top: 10px; /* Espaçamento acima das redes sociais */
+.maior_acesso ul {
+    margin: 0;
 }
 
-.rodape_redes_sociais a {
-    margin: 0 10px; /* Espaçamento entre os ícones das redes sociais */
-    transition: transform 0.3s ease; /* Adiciona uma transição suave ao passar o mouse */
+.maior_acesso ul li:not(:last-child){
+    margin-bottom: 10px;
 }
 
-.rodape_redes_sociais a:hover {
-    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+.header_categorias{
+    padding-top: 40px;
+    padding-bottom: 50px;
 }
 
 .search-container {
     width: 100%;
-    margin: 0 auto 20px auto; /* Adiciona margem abaixo para espaçamento */
+    margin: 0 auto 20px auto;
     position: relative;
     margin-bottom: 50px;
     margin-top: -40px;

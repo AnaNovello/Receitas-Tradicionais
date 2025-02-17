@@ -3,7 +3,6 @@
 @section('title', 'Tradição Brasileira')
 
 @section('content')
-    <link rel = "stylesheet" type="text/css" href="./css/main.css">
     <header class="header_ranking">
         <main class="ranking">
             <div class="header_3">

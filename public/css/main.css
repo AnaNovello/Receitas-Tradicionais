@@ -69,10 +69,10 @@ ul{
     box-sizing: border-box;
     top: 12px;
     
-    display: flex; /* Ativa o Flexbox */
-    align-items: center; /* Alinha verticalmente os itens */
-    justify-content: space-between; /* Mantém os elementos separados */
-    padding: 10px 20px; /* Adiciona espaçamento interno */
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 10px 20px;
 }
 
 .p_1{
@@ -94,8 +94,8 @@ ul{
 }
 
 .menu ul{
-    display: flex; /* Faz os itens ficarem em linha */
-    align-items: center; /* Alinha os itens verticalmente */
+    display: flex; 
+    align-items: center; 
     list-style: none;
     margin: 0;
     padding: 0;
@@ -105,28 +105,14 @@ ul{
     color: #f48c2b;
 }
 
-/*.menu ul li a.menu_inicio:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    bottom: -20px;
-    background-color: #f48c2b;
-}*/
-
 .menu ul li{
-    margin: 0 20px; /* Espaçamento lateral */
-    position: static; /* Remove position: relative */
-    /*display: inline-block;
-    color: #242321;
-    margin-left: 35px;
-    position: relative;*/
+    margin: 0 20px; 
+    position: static;
 }
 
 .menu ul li:hover{
     color: #f48c2b !important;
 }
-
 
 .menu ul li a{
     font-family: 'BlippoBlack';
@@ -143,13 +129,13 @@ ul{
     position: absolute;
     width: 0;
     height: 4px;
-    bottom: -20px; /* Mantém a linha na mesma altura da borda */
+    bottom: -20px; 
     background-color: #f48c2b;
-    transition: width 0.3s ease; /* Adiciona uma transição suave */
+    transition: width 0.3s ease; 
 }
 
 .menu ul li a:hover:before {
-    width: 100% !important; /* Largura total ao passar o mouse */
+    width: 100% !important;
 }
 
 .menu_urls{
@@ -172,8 +158,8 @@ ul{
 
 .login {
     display: flex;
-    align-items: center; /* Centraliza os botões verticalmente */
-    gap: 15px; /* Espaçamento entre os botões */
+    align-items: center;
+    gap: 15px; 
 }
 
 
@@ -214,9 +200,8 @@ ul{
 
 .ranking {
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    /*align-items: center; Centraliza o conteúdo verticalmente */
-    height: 100%; /* Ajusta a altura para preencher o espaço disponível */
+    justify-content: center; 
+    height: 100%; 
 }
 
 .maior_acesso {
@@ -224,18 +209,18 @@ ul{
 }
 
 .maior_acesso ul {
-    list-style-type: none; /* Remove as bolinhas de listagem */
-    padding: 0; /* Remove o espaçamento interno do UL */
-    margin: 40px; /* Remove margens externas */
+    list-style-type: none;
+    padding: 0; 
+    margin: 40px; 
 }
 
 .texto_rank {
-    font-family: 'rockwell-extra-bold'; /* Mantenha a fonte consistente */
-    font-size: 24px; /* Ajuste o tamanho do texto conforme necessário */
-    color: #f48c2b; /* Cor do texto */
+    font-family: 'rockwell-extra-bold'; 
+    font-size: 24px; 
+    color: #f48c2b; 
     text-transform: uppercase;
-    margin: 0; /* Remove margens extras */
-    display: block; /* Garante que o texto ocupe toda a linha */
+    margin: 0; 
+    display: block;
 }
 
 .slider_m_acesso{
@@ -243,7 +228,6 @@ ul{
     width: 980px;
     height: 300px;
     overflow: hidden;
-    /*border: 3px solid #242321;*/
 }
 
 .slides{
@@ -352,34 +336,34 @@ ul{
 }
 
 .rodape {
-    background-color: #302f2c; /* Cor de fundo do rodapé */
-    color: #E6E6E6; /* Cor do texto */
-    padding: 20px 0; /* Espaçamento interno no rodapé */
-    text-align: center; /* Centraliza o texto */
+    background-color: #302f2c; 
+    color: #E6E6E6; 
+    padding: 20px 0; 
+    text-align: center;
     width: 100%;
     border-radius: 60px 60px 0px 0px;
 }
 
 .rodape_conteudo {
     max-width: 980px;
-    margin: 0 auto; /* Centraliza o conteúdo do rodapé */
+    margin: 0 auto; 
 }
 
 .rodape p {
-    margin: 5px 0; /* Margem entre os parágrafos */
+    margin: 5px 0; 
 }
 
 .rodape_redes_sociais {
-    margin-top: 10px; /* Espaçamento acima das redes sociais */
+    margin-top: 10px; 
 }
 
 .rodape_redes_sociais a {
-    margin: 0 10px; /* Espaçamento entre os ícones das redes sociais */
-    transition: transform 0.3s ease; /* Adiciona uma transição suave ao passar o mouse */
+    margin: 0 10px; 
+    transition: transform 0.3s ease;
 }
 
 .rodape_redes_sociais a:hover {
-    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+    transform: scale(1.2); 
 }
 
 .sobre_container{

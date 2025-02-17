@@ -1,90 +1,7 @@
-@font-face {
-    font-family: 'BlippoBlack';
-    src: url(Fontes/BlippoBlack.ttf);
-}
-
-body{
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-}
-
-main{
-    margin: 0 auto;
-    width: 50%;
-    position: relative;
-}
-
-.header_inicial{
-    position: relative;
-}
-
-.logo{
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-}
-
-.redes_sociais ul li{
-    position: bottom;
-    bottom: 50%;
-    display: block;
-    float: left;
-    margin-left: 20px
-}
-
-ul{
-    padding: 0px!important;
-}
-
-.redes_sociais{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    float: right;
-    width: 20%;
-}
-
-.header_2{
-    background-color: #ffffff;
-    width: 100%;
-    max-width: 980px;
-    margin: 0 auto;
-    border-bottom: 5px solid #E6E6E6;
-    position: relative;
-    box-sizing: border-box;
-}
-
-.p_1{
-    font-family: 'sans-serif';
-    font-size: 18px;
-    color: #242321;
-    width: 100%;
-    max-width: 980px;
-    margin: 0 auto;
-    position: relative;
-    top: 20px;
-    line-height: 1.6;
+.p_1:not(:last-child){
     margin-bottom: 20px;
 }
 
-.menu ul li{
-    display: inline-block;
-    color: #242321;
-    margin-left: 35px;
-    position: relative;
-}
-
-.menu ul li a{
-    font-family: 'BlippoBlack';
-    color: #242321;
-    font-size: 15px;
-    text-decoration: none;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
-}
 
 .menu ul li a.menu_contato{
     color: #f48c2b;
@@ -93,98 +10,6 @@ ul{
 .menu ul li a.menu_inicio{
     color: #242321;
 }
-
-.menu ul li a:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 4px;
-    bottom: -20px; /* Mantém a linha na mesma altura da borda */
-    background-color: #f48c2b;
-    transition: width 0.3s ease; /* Adiciona uma transição suave */
-}
-
-.menu ul li a:hover:before {
-    width: 100% !important; /* Largura total ao passar o mouse */
-}
-
-.menu_urls{
-    position: relative;
-    z-index: 10;
-}
-
-.menu_urls .menu ul li:hover {
-    color: #f48c2b;
-}
-
-.apresentacao{
-    max-width: 100%; /* Mantendo a largura da borda cinza */
-    margin: 0 auto;  /* Centraliza o texto */
-    padding: 0px; /* Adiciona um espaçamento interno */
-    box-sizing: border-box; /* Garante que padding não ultrapasse o max-width */
-}
-
-.busca{
-    position: absolute;
-    max-width: fit-content;
-    width: 70%;
-    bottom: 30%;
-    left: 78%;
-}
-
-.busca input{
-    height: 30px;
-    width: 174px;
-    margin-left: auto;
-    margin-right: 50px;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 10px;
-    background-image: url('../Img_principais/figideira_v2.png');
-    background-repeat: no-repeat;
-    background-position: 95% 2px;
-    border: 2px solid #E6E6E6;
-}
-
-.col_100{
-    width: 100%;
-    float: left;
-    position: relative;
-}
-
-.rodape {
-    background-color: #302f2c; /* Cor de fundo do rodapé */
-    color: #E6E6E6; /* Cor do texto */
-    padding: 20px 0; /* Espaçamento interno no rodapé */
-    text-align: center; /* Centraliza o texto */
-    width: 100%;
-    position: relative;
-    bottom: 0;
-}
-
-.rodape_conteudo {
-    max-width: 980px;
-    margin: 0 auto; /* Centraliza o conteúdo do rodapé */
-}
-
-.rodape p {
-    margin: 5px 0; /* Margem entre os parágrafos */
-}
-
-.rodape_redes_sociais {
-    margin-top: 10px; /* Espaçamento acima das redes sociais */
-}
-
-.rodape_redes_sociais a {
-    margin: 0 10px; /* Espaçamento entre os ícones das redes sociais */
-    transition: transform 0.3s ease; /* Adiciona uma transição suave ao passar o mouse */
-}
-
-.rodape_redes_sociais a:hover {
-    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
-}
-
-
 
 .form-container {
     background: #fff;
@@ -223,7 +48,7 @@ textarea {
 
 .form-group-button {
     display: flex;
-    justify-content: flex-end; /* Alinha o botão à direita */
+    justify-content: flex-end;
 }
 
 button {

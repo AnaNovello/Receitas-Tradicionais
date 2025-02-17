@@ -15,9 +15,9 @@
 }
 
 .lista_receitas ul {
-    list-style-type: none; /* Remove as bolinhas de listagem */
+    list-style-type: none;
     padding: 0;
-    margin: 0; /* Remove margens externas */
+    margin: 0;
 }
 
 .lista_receitas ul li:not(:last-child){
@@ -27,9 +27,9 @@
     padding-bottom: 50px;
 }
 .l_receita {
-    font-size: 16px; /* Ajuste o tamanho do texto conforme necessário */
+    font-size: 16px; 
     text-transform: uppercase;
-    color:  #5a5a5a; /* Cor do texto */
+    color:  #5a5a5a; 
     text-decoration: none;
     cursor: pointer;
     display: block;
@@ -42,7 +42,7 @@
 }
 
 .l_receita:hover {
-    color: #f48c2b; /* Cor do texto ao passar o mouse */
+    color: #f48c2b;
     border-color: #f48c2b;
 }
 
@@ -56,7 +56,7 @@
 
 .search-container {
     width: 100%;
-    margin: 0 auto 20px auto; /* Adiciona margem abaixo para espaçamento */
+    margin: 0 auto 20px auto; 
     position: relative;
     margin-bottom: 50px;
 }
