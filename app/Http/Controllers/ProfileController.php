@@ -7,13 +7,23 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
     /**
      * Display the user's profile form.
      */
+
+    public function show(){
+        $user = Auth::user();
+        return view('dashboard', compact('user'));
+    }
+
     public function edit(Request $request): View
     {
         return view('profile.edit', [
@@ -26,15 +36,35 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $user = Auth::user();
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
+            'foto' => ['nullable', 'image', 'mimes:jpg,png,jpeg,gif', 'max:2048'],
+        ]);
+
+        // Atualizar nome e email
+        $user->name = $request->name;
+        $user->email = $request->email;
+
+        // Processar upload de imagem
+        if ($request->hasFile('foto')) {
+            // Apagar a imagem antiga, se existir
+            if ($user->foto) {
+                Storage::delete('public/' . $user->foto);
+            }
+
+            // Salvar nova imagem
+            $path = $request->file('foto')->store('profile_pictures', 'public');
+            $user->foto = $path;
         }
+        $user = Auth::user();
+        /** @var User $user */
 
-        $request->user()->save();
+        $user->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return redirect()->route('profile.edit')->with('status', 'profile-updated');
     }
 
     /**

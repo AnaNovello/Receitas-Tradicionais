@@ -47,22 +47,26 @@
 
                         <div class="form-group">
                             <label for="arquivo">Anexar Arquivo</label>
-                            <input type="file" id="arquivo" name="arquivo">
+                            <input type="file" id="arquivo" name="arquivo" accept=".jpg, .jpeg, .png, .pdf">
                         </div>
 
                         <div class="form-group">
                             <label for="descricao">Descrição</label>
                             <textarea id="descricao" name="descricao" placeholder="Digite aqui..."></textarea>
                         </div>
+                        @auth
+                            <div class="form-group-button"> 
+                                <button type="submit">Enviar</button>
+                            </div>
+                        @endauth
+                            <p class="login-warn" >Você deve estar <a href="{{ route('login') }}">logado</a> para enviar um formulário!</p>
+                        @guest
 
-                        <div class="form-group-button"> 
-                            <button type="submit">Enviar</button>
-                        </div>
+                        @endguest
                     </form>
                 </div>
                 
             </div>
-            <script src="./Js/slider_index.js" ></script>
         </main>
         
     </header>

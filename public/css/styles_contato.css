@@ -64,3 +64,22 @@ button {
 button:hover {
     background: #5750e3;
 }
+
+.login-warn{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    color: #000000;
+    opacity: 70%;
+}
+
+.login-warn a{
+    color:#ff8717;
+    transition: all 0.3s ease;
+    
+}
+
+.login-warn a:hover{
+    color: #964c07;
+}

@@ -25,9 +25,9 @@ Route::get('/sobre-nos', [SobreNosController::class, 'index'])->name('sobre_nos'
 
 Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])->group(function(){
+    Route::get('/dashboard', [ProfileController::class, 'show'])->name('dashboard');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
