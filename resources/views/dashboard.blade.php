@@ -13,7 +13,7 @@
                         @if ($user->foto)
                             <img src="{{ asset('storage/' . $user->foto) }}" alt="Foto de perfil" class="w-20 h-20 rounded-md object-cover">
                         @else
-                            <img src="{{ asset('storage/none.png') }}" alt="Foto de Perfil" class="w-20 h-20 rounded-md">
+                            <img src="{{ asset('storage/profile_pictures/none.png') }}" alt="Foto de Perfil" class="w-20 h-20 rounded-md">
                         
                         @endif
                     </div>

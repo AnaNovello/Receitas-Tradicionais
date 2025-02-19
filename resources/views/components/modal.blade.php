@@ -14,6 +14,8 @@ $maxWidth = [
 ][$maxWidth];
 @endphp
 
+
+
 <div
     x-data="{
         show: @js($show),
@@ -39,6 +41,7 @@ $maxWidth = [
             document.body.classList.remove('overflow-y-hidden');
         }
     })"
+
     x-on:open-modal.window="$event.detail == '{{ $name }}' ? show = true : null"
     x-on:close-modal.window="$event.detail == '{{ $name }}' ? show = false : null"
     x-on:close.stop="show = false"

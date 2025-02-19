@@ -8,6 +8,7 @@ use App\Http\Controllers\ReceitaController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\InicialController;
 use App\Http\Controllers\ContatoController;
+use App\Http\Controllers\AdminDashboardController;
 
 /*Route::get('/receitas', function () {
     return view('receitas'); // Verifique se este arquivo existe em resources/views/
@@ -25,9 +26,16 @@ Route::get('/sobre-nos', [SobreNosController::class, 'index'])->name('sobre_nos'
 
 Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
-Route::middleware(['auth', 'verified'])->group(function(){
+// Para usuários comuns
+Route::middleware(['auth', 'verified', 'redirectIfAdmin'])->group(function(){
     Route::get('/dashboard', [ProfileController::class, 'show'])->name('dashboard');
 });
+
+// Para administradores
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard'); // Alterando o controller conforme necessário
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -37,4 +45,4 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);
+//route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);
