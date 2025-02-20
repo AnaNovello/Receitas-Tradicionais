@@ -59,9 +59,9 @@
                                 <button type="submit">Enviar</button>
                             </div>
                         @endauth
-                            <p class="login-warn" >Você deve estar <a href="{{ route('login') }}">logado</a> para enviar um formulário!</p>
+                            
                         @guest
-
+                            <p class="login-warn" >Você deve estar <a href="{{ route('login') }}">logado</a> para enviar um formulário!</p>
                         @endguest
                     </form>
                 </div>
