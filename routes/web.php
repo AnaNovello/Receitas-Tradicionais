@@ -43,6 +43,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::post('/contato', [ContatoController::class, 'store'])->name('contato.store');
+
+
 require __DIR__.'/auth.php';
 
 //route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);

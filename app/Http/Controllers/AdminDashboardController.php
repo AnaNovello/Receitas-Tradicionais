@@ -9,7 +9,8 @@ class AdminDashboardController extends Controller
 {
     public function index()
     {
+        $contatos = \App\Models\Contato::orderBy('created_at', 'asc')->get();
         $user = Auth::user();
-        return view('admin.dashboard', compact('user'));
+        return view('admin.dashboard', compact('user', 'contatos'));
     }
 }

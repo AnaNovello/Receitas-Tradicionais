@@ -34,7 +34,8 @@
                 </div> 
 
                 <div class="form-container">
-                    <form action="#" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('contato.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
                             <label for="motivo">Motivo do Contato</label>
                             <select id="motivo" name="motivo">
