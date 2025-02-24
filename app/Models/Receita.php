@@ -10,5 +10,19 @@ class Receita extends Model
     use HasFactory;
 
     protected $table = 'receita'; 
-    protected $fillable = ['nome', 'categoria'];
+
+    protected $fillable = [
+        'nome', 
+        'categoria',
+        'descricao',
+        'foto',
+        'ingredientes',
+        'preparo',
+        'status', 
+        'admin_id'
+    ];
+
+    protected $casts = [
+        'status' => 'string',
+    ];
 }

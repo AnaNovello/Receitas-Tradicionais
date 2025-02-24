@@ -53,7 +53,8 @@
 
                         <div class="form-group">
                             <label for="descricao">Descrição</label>
-                            <textarea id="descricao" name="descricao" placeholder="Digite aqui..."></textarea>
+                            <textarea id="descricao" name="descricao" maxlength="250" placeholder="Digite aqui..."></textarea>
+                            <div id="charCount" style="opacity: 60%; text-align: right">0/250</div>
                         </div>
                         @auth
                             <div class="form-group-button"> 
@@ -71,5 +72,17 @@
         </main>
         
     </header>
+
+    <script>
+        // Captura o textarea e o contador de caracteres
+        const descricaoField = document.getElementById('descricao');
+        const charCount = document.getElementById('charCount');
+        
+        // Função para atualizar o contador de caracteres
+        descricaoField.addEventListener('input', function () {
+            const currentLength = descricaoField.value.length;
+            charCount.textContent = `${currentLength}/250`;
+        });
+    </script>
 
 @endsection

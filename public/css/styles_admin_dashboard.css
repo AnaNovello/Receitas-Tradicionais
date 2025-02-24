@@ -62,3 +62,16 @@
 #d_admin:hover{
     background-color: #ecd7db;
 }
+
+table {
+    table-layout: fixed; /* Garante que a tabela não exceda a largura */
+    width: 100%; /* Ajusta a largura da tabela ao tamanho da tela */
+}
+
+.descricao {
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}

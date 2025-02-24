@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Categorias')
+@section('title', 'Sobre Nós')
 
 @section('content')
     <link rel = "stylesheet" type="text/css" href="./Css/styles_sobre.css">

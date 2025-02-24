@@ -14,5 +14,6 @@ class Contato extends Model
         'tipo',
         'arquivo',
         'descricao',
+        'status'
     ];
 }

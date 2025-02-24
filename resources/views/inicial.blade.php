@@ -9,7 +9,7 @@
                 <div class="maior_acesso">
                     <ul>
                         <li>
-                            <b class="texto_rank" href="">Regiões Mais Acessadas</b>
+                            <b class="texto_rank" href="">Navegue pelas regiões</b>
                         </li>
                     </ul>
                 </div>
