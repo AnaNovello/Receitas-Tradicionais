@@ -44,9 +44,9 @@
                                                 text-red-500
                                             @else
                                                 text-gray-900
-                                            @endif
-                                        "
-                                        onchange="confirmarAlteracaoStatus(this, '{{ $receita->id }}')"
+                                            @endif"
+                                        data-receita-id="{{ $receita->id }}" 
+                                        onchange="confirmarAlteracaoStatus(this, this.dataset.receitaId)"
                                     >
                                         <option value="pendente" class="text-yellow-500" @if($receita->status === 'pendente') selected @endif>Pendente</option>
                                         <option value="aprovada" class="text-green-500" @if($receita->status === 'aprovada') selected @endif>Aprovada</option>
@@ -76,10 +76,7 @@
         <h2 class="text-xl font-bold mb-4">Confirmar Alteração</h2>
         <p class="mb-4">Tem certeza que deseja alterar o status desta receita?</p>
         <div class="flex justify-end">
-            <button 
-                onclick="fecharModal()" 
-                class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded mr-2"
-            >
+            <button id="cancelButton" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded mr-2">
                 Cancelar
             </button>
             <form id="formAlterarStatus" method="POST" action="">
@@ -100,22 +97,42 @@
 
 <script>
 
-function confirmarAlteracaoStatus(selectElement, receitaId) {
-    const novoStatus = selectElement.value;
-    const modal = document.getElementById('modalConfirmacao');
-    const form = document.getElementById('formAlterarStatus');
-    const inputStatus = document.getElementById('novoStatus');
+    let previousStatus; // Variável para armazenar o valor anterior do select
+    let currentSelect; // Armazena o select atual
+    
+    document.querySelectorAll('select').forEach(select => {
+        select.addEventListener('focus', function () {
+            previousStatus = this.value; // Armazena o valor antes da alteração
+            currentSelect = this;
+        });
 
-    inputStatus.value = novoStatus;
-    form.action = `/admin/receitas/${receitaId}/atualizar-status`;
+        select.addEventListener('change', function () {
+            confirmarAlteracaoStatus(this, this.dataset.receitaId);
+        });
+    });
 
-    modal.classList.remove('hidden');
-}
+    document.getElementById('cancelButton').addEventListener('click', function () {
+        if (currentSelect) {
+            currentSelect.value = previousStatus; // Restaura o valor anterior
+        }
+        fecharModal();
+    });
+
+    function confirmarAlteracaoStatus(selectElement, receitaId) {
+        const novoStatus = selectElement.value;
+        const modal = document.getElementById('modalConfirmacao');
+        const form = document.getElementById('formAlterarStatus');
+        const inputStatus = document.getElementById('novoStatus');
+
+        inputStatus.value = novoStatus;
+        form.action = `/admin/receitas/${receitaId}/atualizar-status`;
+
+        modal.classList.remove('hidden');
+    }
 
 
-function fecharModal() {
-    const modal = document.getElementById('modalConfirmacao');
-    modal.classList.add('hidden');
-}
+    function fecharModal() {
+        document.getElementById('modalConfirmacao').classList.add('hidden');
+    }
 
 </script>

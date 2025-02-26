@@ -11,6 +11,7 @@ use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminContatoController;
 
+
 /*Route::get('/receitas', function () {
     return view('receitas'); // Verifique se este arquivo existe em resources/views/
 })->name('receitas'); // Definindo o nome da rota*/
@@ -19,7 +20,13 @@ use App\Http\Controllers\AdminContatoController;
 
 Route::get('/',[InicialController::class, 'index'])->name('inicial');
 
-Route::get('/receitas', [ReceitaController::class, 'index'])->name('receitas');
+Route::prefix('/receitas')->group(function(){
+    Route::get('/', [ReceitaController::class, 'index'])->name('receitas');
+    Route::get('/{id}', [ReceitaController::class, 'show'])->name('receitas.show');
+    Route::post('/salvar/{id}', [ReceitaController::class, 'salvarReceita'])->name('receitas.salvar');
+    Route::delete('/excluir/{id}', [ReceitaController::class, 'excluirReceita'])->name('receitas.excluir');
+
+});
 
 Route::get('/categorias', [CategoriaController::class, 'index'])->name('categorias');
 
@@ -35,6 +42,8 @@ Route::middleware(['auth', 'verified', 'redirectIfAdmin'])->group(function(){
 // Para administradores
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard'); // Alterando o controller conforme necessário
+    Route::get('/admin/dashboard/filter-status', [AdminDashboardController::class, 'filterStatus'])->name('admin.filterStatus');
+
 });
 
 
@@ -68,17 +77,6 @@ Route::prefix('admin/contatos')->middleware(['auth', 'admin'])->group(function()
     Route::put('/{id}/atualizar-status', [AdminContatoController::class, 'updateStatus'])->name('admin.contatos.atualizarStatus');
 
 });
-
-
-
-
-
-
-
-
-
-
-
 
 
 require __DIR__.'/auth.php';

@@ -47,4 +47,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function receitasSalvas(){
+        return $this->belongsToMany(Receita::class, 'receitas_salvas', 'user_id', 'receita_id');
+    }
+
 }

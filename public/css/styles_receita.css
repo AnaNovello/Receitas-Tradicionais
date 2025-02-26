@@ -1,234 +1,113 @@
-@font-face {
-    font-family: 'BlippoBlack';
-    src: url(Fontes/BlippoBlack.ttf);
-}
-@font-face {
-    font-family: 'rockwell-extra-bold';
-    src: url(Fontes/rockwell-extra-bold.ttf);
-}
-@font-face {
-    font-family: 'NewAmsterdam-Regular';
-    src: url(Fontes/NewAmsterdam-Regular.ttf);
+/* Container principal: centralizado */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-body{
-    height: 100%;
+/* Flex container para dividir imagem e texto */
+.recipe-details {
+    max-width: 960px; /* Experimente ajustar para o mesmo valor da linha cinza */
     width: 100%;
     margin: 0 auto;
-    padding: 0;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-.page-container {
-    flex: 1; /* Faz com que o conteúdo principal expanda para preencher o espaço disponível */
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2rem;
 }
 
-main{
-    margin: 0 auto;
-    width: 50%;
-    position: relative;
-}
-
-.menu_principal{
-    background-color: #E6E6E6;
-    width: 100%;
-    height: 140px;
-}
-
-.header_inicial{
-    position: relative;
-}
-
-.logo{
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-}
-
-.redes_sociais ul li{
-    position: bottom;
-    bottom: 50%;
-    display: block;
-    float: left;
-    margin-left: 20px
-}
-
-ul{
-    padding: 0px!important;
-}
-
-.redes_sociais{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    float: right;
-    width: 20%;
-}
-
-.header_2{
-    background-color: #ffffff;
-    width: 100%;
-    max-width: 980px;
-    margin: 0 auto;
-    border-bottom: 5px solid #E6E6E6;
-    position: relative;
-    box-sizing: border-box;
-}
-
-.p_1{
-    font-family: 'sans-serif';
-    color: #242321;
-    width: 100%;
-    max-width: 980px;
-    margin: 0 auto;
-    position: relative;
-    top: 20px;
-}
-
-.menu ul li a.menu_categorias{
-    color: #f48c2b;
-}
-
-.menu ul li{
-    display: inline-block;
-    color: #242321;
-    margin-left: 35px;
-    position: relative;
-}
-
-.menu ul li:hover{
-    color: #f48c2b !important;
-}
-
-
-.menu ul li a{
-    font-family: 'BlippoBlack';
-    color: #242321;
-    font-size: 15px;
-    text-decoration: none;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
-}
-
-.menu ul li a:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 4px;
-    bottom: -20px; /* Mantém a linha na mesma altura da borda */
-    background-color: #f48c2b;
-    transition: width 0.3s ease; /* Adiciona uma transição suave */
-}
-
-.menu ul li a:hover:before {
-    width: 100% !important; /* Largura total ao passar o mouse */
-}
-
-.menu_urls{
-    position: relative;
-    z-index: 10;
-}
-
-.menu_urls .menu ul li:hover {
-    color: #f48c2b;
-}
-
-.busca{
-    position: absolute;
-    max-width: fit-content;
-    width: 70%;
-    bottom: 30%;
-    left: 78%;
-}
-
-.busca input{
-    height: 30px;
-    width: 174px;
-    margin-left: auto;
-    margin-right: 50px;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 10px;
-    background-image: url('../Img_principais/figideira_v2.png');
-    background-repeat: no-repeat;
-    background-position: 95% 2px;
-    border: 2px solid #E6E6E6;
-}
-
-.col_100{
-    width: 100%;
-    float: left;
-    position: relative;
-}
-
-
-.receita_inicio {
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    /*align-items: center; Centraliza o conteúdo verticalmente */
-    height: 100%; /* Ajusta a altura para preencher o espaço disponível */
-}
-
-.txt_receita {
+/* Coluna da imagem */
+.recipe-image {
+    flex: 1 1 300px; /* Toma pelo menos 300px, mas pode crescer */
     text-align: center;
 }
 
-.txt_receita ul {
-    list-style-type: none; /* Remove as bolinhas de listagem */
-    padding: 0; /* Remove o espaçamento interno do UL */
-    margin: 40px; /* Remove margens externas */
+.recipe-image img {
+    max-width: 100%;
+    max-width: 300px; /* Reduz o tamanho da imagem */
+    border-radius: 8px;
+    object-fit: cover;
 }
 
-.receita_nome {
-    font-family: 'rockwell-extra-bold'; /* Mantenha a fonte consistente */
-    font-size: 24px; /* Ajuste o tamanho do texto conforme necessário */
-    color: #f48c2b; /* Cor do texto */
-    text-transform: uppercase;
-    margin: 0; /* Remove margens extras */
-    display: block; /* Garante que o texto ocupe toda a linha */
+/* Coluna do texto */
+.recipe-text {
+    flex: 2 1 400px; /* Pode crescer mais */
+    text-align: left;
+    align-self: flex-start; /* Alinha o texto ao topo da imagem */
+    margin-top: -10px; /* Ajuste sutil para subir um pouco */
 }
 
-.capa{
-    margin: 0 auto;
-    width: 980px;
-    height: 300px;
-    overflow: hidden;
-    padding-bottom: 50px;
-    /*border: 3px solid #242321;*/
+.recipe-text h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
 }
 
-.rodape {
-    background-color: #302f2c; /* Cor de fundo do rodapé */
-    color: #E6E6E6; /* Cor do texto */
-    padding: 20px 0; /* Espaçamento interno no rodapé */
-    text-align: center; /* Centraliza o texto */
-    width: 100%;
-    position: relative;
-    bottom: 0;
+.recipe-text p {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #555;
 }
 
-.rodape_conteudo {
-    max-width: 980px;
-    margin: 0 auto; /* Centraliza o conteúdo do rodapé */
+.recipe-text p strong {
+    color: #222;
 }
 
-.rodape p {
-    margin: 5px 0; /* Margem entre os parágrafos */
-
+/* Responsividade: para telas menores, as colunas se empilham */
+@media (max-width: 768px) {
+    .recipe-details {
+        flex-direction: column;
+        text-align: center;
+    }
+    .recipe-text {
+        text-align: center;
+    }
 }
 
-.rodape_redes_sociais {
-    margin-top: 10px; /* Espaçamento acima das redes sociais */
+.menu ul li a.menu_tot_receitas{
+    color: #f48c2b;
 }
 
-.rodape_redes_sociais a {
-    margin: 0 10px; /* Espaçamento entre os ícones das redes sociais */
-    transition: transform 0.3s ease; /* Adiciona uma transição suave ao passar o mouse */
+.menu ul li a.menu_inicio{
+    color: #242321;
 }
 
-.rodape_redes_sociais a:hover {
-    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+.save-recipe-form {
+    align-self: flex-start;
+}
+
+.btn-salvar-receita {
+    display: block;
+    margin: 1rem auto 0;
+    padding: 0.5rem 3rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+
+.btn-salvar-receita:hover {
+    background-color: #367c3a;
+}
+
+.btn-receita-salva {
+    display: block;
+    margin: 1rem auto 0;
+    padding: 0.5rem 3rem;
+    background-color: #808080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.btn-receita-salva.hover-excluir {
+    background-color: red;
+    color: white;
 }

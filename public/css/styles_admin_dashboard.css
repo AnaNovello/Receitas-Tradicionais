@@ -63,9 +63,16 @@
     background-color: #ecd7db;
 }
 
+.tabela-envios{
+    max-height: 500px;
+    overflow-y: auto;
+}
+
 table {
+    overflow:scroll;
     table-layout: fixed; /* Garante que a tabela não exceda a largura */
     width: 100%; /* Ajusta a largura da tabela ao tamanho da tela */
+    height: 500px;
 }
 
 .descricao {

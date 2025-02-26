@@ -12,6 +12,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Models\User;
+use App\Models\Receita;
 
 class ProfileController extends Controller
 {
@@ -21,7 +22,12 @@ class ProfileController extends Controller
 
     public function show(){
         $user = Auth::user();
-        return view('dashboard', compact('user'));
+
+        $receitasSalvas = Receita::whereHas('salvas', function ($query) use ($user) {
+            $query->where('user_id', $user->id);
+        })->get();
+    
+        return view('dashboard', compact('user', 'receitasSalvas'));
     }
 
     public function edit(Request $request): View

@@ -1,4 +1,5 @@
 <link rel = "stylesheet" type="text/css" href="{{ asset('css/styles_admin_dashboard.css') }}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <x-app-layout>
     <x-slot name="header">
@@ -9,7 +10,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg border-l-4 border-yellow-500">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="mb-4">
                         @if ($user->foto)
@@ -61,12 +62,26 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
+                    
+                    <div class="mb-4 flex items-center justify-between">
+                        <h2 class="text-2xl font-bold">Status de Envios</h2>
 
-                    <h2 class="text-2xl font-bold mb-4"> Status de Envios</h2>
+                        <!-- Filtro de Status -->
+                        <div class="mb-4">
+                            <label for="statusFilter" class="text-sm font-medium text-gray-700 dark:text-gray-300">Filtrar por:</label>
+                            <select id="statusFilter" class="mt-2 block w-full py-2 px-3 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-gray-300">
+                                <option value="">Todos</option>
+                                <option value="pendente">Pendente</option>
+                                <option value="aprovada">Aprovada</option>
+                                <option value="rejeitada">Rejeitada</option>
+                            </select>
+                        </div>
+                    </div>
+                    
 
-                    <div class="overflow-x-auto">
+                    <div class="tabela-envios">
                         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                             <thead class="bg-gray-50 dark:bg-gray-700">
                                 <tr>
@@ -77,7 +92,8 @@
                                     <th class="px-4 py-2 text-left text-sm font-medium text-gray-700 dark:text-gray-300"><b>Status</b></th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                            
+                            <tbody id="table-container" class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
                                 @forelse ($receitas as $receita)
                                     <tr>
                                         <td class="px-4 py-2 text-sm text-gray-900 dark:text-gray-100">{{ $receita->admin_id ?? 'N/A' }}</td>
@@ -109,11 +125,10 @@
                                         <td colspan="5" class="px-4 py-2 text-center text-sm text-gray-500 dark:text-gray-300">Nenhum envio encontrado.</td>
                                     </tr>
                                 @endforelse
-                            </tbody>
+                            </tbody> 
                         </table>
                     </div>
-
-                </div>
+                </div>             
             </div>
         </div>
     </div>
@@ -130,7 +145,7 @@
                     </div>
 
                      <!-- Tabela de contatos -->
-                    <div class="overflow-x-auto">
+                    <div class="tabela-envios">
                         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                             <thead class="bg-gray-50 dark:bg-gray-700">
                                 <tr>
@@ -213,6 +228,32 @@
                 element.innerHTML = firstPart + '<br>' + secondPart;
             }
         }
+    });
+
+    $(document).ready(function() {
+        $('#statusFilter').change(function() {
+            var status = $(this).val();
+
+            $.ajax({
+                url: '{{ route("admin.filterStatus") }}', // URL que vai chamar o método no Controller
+                type: 'GET', // Tipo da requisição (GET)
+                data: { status: status }, // Envia o status como parâmetro
+                beforeSend: function(){
+                    $('#table-container').empty();
+                },
+                success: function(response) {
+                    if(status === ""){
+                        location.reload();
+                    }else{
+                         // Se a requisição for bem-sucedida, atualiza a tabela com a nova view
+                        $('#table-container').html(response); // Coloca o HTML da tabela dentro do elemento com id 'table-container'
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Erro na requisição AJAX:', error);
+                }
+            });
+        });
     });
 
 </script>

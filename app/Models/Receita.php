@@ -25,4 +25,9 @@ class Receita extends Model
     protected $casts = [
         'status' => 'string',
     ];
+
+    public function salvas(){
+        return $this->belongsToMany(User::class, 'receitas_salvas', 'receita_id', 'user_id');
+    }
+
 }

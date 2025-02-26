@@ -5,14 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Receita;
 use Illuminate\Support\Facades\Auth;
+use App\Models\ReceitaSalva;
 
 class ReceitaController extends Controller
 {
-    public function index(){
-        $receitas = Receita::all();
+    public function index(Request $request){
+        $search = $request->input('search');
 
-        //return view('receitas', ['receitas' => $receitas]);
-        return view('receitas');
+        $receitas = Receita::where('status', 'aprovada')
+                    ->when($search, function($query, $search){
+                        return $query->where('nome', 'like', "%{$search}%");
+                    })
+                    ->paginate(10);
+        return view('receitas', compact('receitas', 'search'));
     }
 
     public function adicionar() {
@@ -158,9 +163,56 @@ class ReceitaController extends Controller
         // Redirecione com uma mensagem de sucesso
         return redirect()->back()->with('success', 'Status atualizado com sucesso!');
     }
+
+    public function show($id){
+        $receita = Receita::findOrFail($id);
+        $receitasSalvas = [];
+        if (Auth::check() && Auth::user()->usertype === 'user') {
+            $receitasSalvas = ReceitaSalva::where('user_id', Auth::id())
+                                        ->pluck('receita_id')
+                                        ->toArray();
+        }
+
+        return view('receita', compact('receita', 'receitasSalvas'));
+    }
+
+    public function salvarReceita($id){
+        // Verifica se o usuário está logado e é do tipo 'user'
+        if (!Auth::check() || Auth::user()->usertype !== 'user') {
+            return redirect()->route('login')->with('error', 'Você não tem permissão para salvar receitas.');
+        }
+
+        $user = Auth::user();
+
+        // Verifica se a receita já foi salva pelo usuário
+        $jaSalva = ReceitaSalva::where('user_id', $user->id)
+                                ->where('receita_id', $id)
+                                ->exists();
+
+        if ($jaSalva) {
+            return redirect()->back()->with('info', 'Você já salvou essa receita.');
+        }
+
+        // Salva a receita na tabela 'receitas_salvas'
+        ReceitaSalva::create([
+            'user_id' => $user->id,
+            'receita_id' => $id,
+        ]);
+
+        return redirect()->back()->with('success', 'Receita salva com sucesso!');
+    }
+
+    public function excluirReceita($id) {
+        if (Auth::check() && Auth::user()->usertype === 'user') {
+            ReceitaSalva::where('user_id', Auth::id())
+                        ->where('receita_id', $id)
+                        ->delete();
+            
+            return redirect()->back()->with('success', 'Receita removida da coleção com sucesso!');
+        }
         
-
-
-
+        return redirect()->route('login')->with('error', 'Você precisa estar logado para excluir receitas.');
+    }
+    
     
 }

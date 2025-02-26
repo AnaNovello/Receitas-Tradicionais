@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/styles_user_dashboard.css') }}">
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -7,7 +8,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg border-l-4 border-green-500">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="mb-4">
                         @if ($user->foto)
@@ -35,12 +36,32 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    
-                    <h2 class="text-2xl font-bold mb-4"> Coleções </h2>
+                    <h2 class="text-2xl font-bold mb-4">Coleções</h2>
+                    <div class="flex flex-wrap gap-4 justify-left">
+                        @if ($receitasSalvas->isEmpty())
+                            <p>Você ainda não salvou nenhuma receita.</p>
+                        @else
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                                @foreach ($receitasSalvas as $receita)
+                                    <div class="card-receita-salva">
+                                        @if($receita->foto)
+                                            <img src="{{ asset('storage/' . $receita->foto) }}" alt="{{ $receita->titulo }}" class="img-receita-salva">
+                                        @else
+                                            <img src="" alt="Receita sem Foto" class="w-full h-40 object-cover rounded-md mb-2">
+                                        @endif
 
+                                        <h3 class="titulo-receita-salva">{{ $receita->titulo }}</h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">{{ $receita->descricao }}</p>
+                                        <a href="{{ route('receitas.show', $receita->id) }}" class="text-blue-500 hover:underline mt-2 inline-block">Ver Receita</a>
+                                    </div>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 
 </x-app-layout>

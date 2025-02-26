@@ -3,59 +3,39 @@
 @section('title', 'Receitas')
 
 @section('content')
-<link rel = "stylesheet" type="text/css" href="./css/styles_tot_receitas.css">
-<header class="header_receitas">
-        <main class="receitas">
+
+    <link rel = "stylesheet" type="text/css" href="{{ asset('css/styles_tot_receitas.css') }}">
+    <header class="header_receitas">
+        <div class="receitas">
             <div class="header_3">
-                <div class="search-container">
-                    <input type="text" id="search" placeholder="Buscar" onkeyup="filtrarReceitas()">
-                </div>
+            
+                <!-- Campo de Busca -->
+                <form action="{{ route('receitas') }}" method="GET" class="form_busca">
+                    <input type="text" name="search" placeholder="Buscar receita..." value="{{ request('search') }}" class="input_busca">
+                    <button type="submit" class="btn_busca">Buscar</button>
+                </form>
 
                 <div class="lista_receitas">
                     <ul>
-                        <li>
-                            <a class="l_receita" href="classica.html" target="_self">Coq Au Vin</a>
-                        </li>
-                        <li>
-                            <a class="l_receita" href="">Feijoada</a>
-                        </li>
-                        <li>
-                            <a class="l_receita" href="">Macarrão à Carbonara</a>
-                        </li>
-                        <li>
-                            <a class="l_receita" href="">Ratatouille</a>
-                        </li>
-                        <li>
-                            <a class="l_receita" href="">Udon</a>
-                        </li>
-                        <li>
-                            <a class="l_receita" href="">Kimchi</a>
-                        </li>
-                        <li>
-                            <a class="l_receita" href="">Pastel de Nata</a>
-                        </li>
-                        <li>
-                            <a class="l_receita" href="">Gaspacho</a>
-                        </li>
-                        <li>
-                            <a class="l_receita" href="">Guacamole</a>
-                        </li>
+                        @forelse ($receitas as $receita)
+                            <li>
+                                <a class="l_receita" href="{{ route('receitas.show', $receita->id) }}" target="_self">
+                                    {{ $receita->nome }}
+                                </a>
+                            </li>
+                        @empty
+                            <li>Nenhuma receita encontrada.</li>
+                        @endforelse
                     </ul>
                 </div>
+                <!-- paginação bootstrap-->
+                <div class="paginacao">
+                    {{ $receitas->links('pagination::bootstrap-4') }}
+                </div>
             </div>
-        </main>
+            
+
+        </div>
     </header>
-
-   <!-- <script>
-        function filtrarReceitas() {
-            let input = document.getElementById("search").value.toLowerCase();
-            let lista = document.querySelectorAll(".lista_receitas ul li");
-
-            lista.forEach(li => {
-                let textoReceita = li.textContent.toLowerCase();
-                li.style.display = textoReceita.includes(input) ? "block" : "none";
-            });
-        }
-    </script> -->
 
 @endsection
