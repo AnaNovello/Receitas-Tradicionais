@@ -23,23 +23,23 @@
                         <input type="radio" name="radio-btn" id="radio5">
 
                         <div class="slide first">
-                            <img src="/img/categorias/Brasileira.png" alt="img" />
+                            <img src="/img/categorias/Norte.png" alt="img" />
                         </div>
 
                         <div class="slide">
-                            <img src="/img/categorias/Italiana.png" alt="img" />
+                            <img src="/img/categorias/Nordeste.png" alt="img" />
                         </div>
 
                         <div class="slide">
-                            <img src="/img/categorias/Francesa.png" alt="img" />
+                            <img src="/img/categorias/Centro_Oeste.png" alt="img" />
                         </div>
 
                         <div class="slide">
-                            <img src="/img/categorias/Japonesa.png" alt="img" />
+                            <img src="/img/categorias/Sudeste.png" alt="img" />
                         </div>
 
                         <div class="slide">
-                            <img src="/img/categorias/Coreana.png" alt="img" />
+                            <img src="/img/categorias/Sul.png" alt="img" />
                         </div>
 
                         <div class="nav_auto">
