@@ -41,7 +41,7 @@
                         @if ($receitasSalvas->isEmpty())
                             <p>Você ainda não salvou nenhuma receita.</p>
                         @else
-                            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
                                 @foreach ($receitasSalvas as $receita)
                                     <div class="card-receita-salva">
                                         @if($receita->foto)

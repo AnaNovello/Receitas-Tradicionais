@@ -152,21 +152,11 @@ ul{
     color: #f48c2b;
 }
 
-/*.busca{
-    position: absolute;
-    max-width: fit-content;
-    width: 70%;
-    bottom: 30%;
-    left: 78%;
-    font-size: 13px;
-}*/
-
 .login {
     display: flex;
     align-items: center;
     gap: 15px; 
 }
-
 
 .login a{
     max-width: fit-content;
@@ -183,19 +173,6 @@ ul{
     color: #EC8D34;
 }
 
-/*.busca input{
-    height: 30px;
-    width: 174px;
-    margin-left: auto;
-    margin-right: 50px;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 10px;
-    background-image: url('/img/figideira_v2.png');
-    background-repeat: no-repeat;
-    background-position: 95% 2px;
-    border: 2px solid #E6E6E6;
-}*/
 
 .col_100{
     width: 100%;
@@ -232,6 +209,7 @@ ul{
     margin: 0 auto;
     width: 980px;
     height: 300px;
+    border-radius: 25px;
     overflow: hidden;
 }
 

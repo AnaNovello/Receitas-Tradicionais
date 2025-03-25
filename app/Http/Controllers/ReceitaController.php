@@ -11,13 +11,22 @@ class ReceitaController extends Controller
 {
     public function index(Request $request){
         $search = $request->input('search');
+        $letra = $request->input('letra');
+        $categoria = $request->input('categoria');
 
         $receitas = Receita::where('status', 'aprovada')
                     ->when($search, function($query, $search){
-                        return $query->where('nome', 'like', "%{$search}%");
+                        return $query->whereRaw('LOWER(nome) LIKE ?', ['%' . strtolower($search) . '%']);
                     })
+                    ->when($letra, function($query, $letra) {
+                        return $query->whereRaw('LOWER(nome) LIKE ?', [strtolower($letra) . '%']);
+                    })
+                    ->when($categoria, function($query, $categoria) {
+                        return $query->where('categoria', $categoria);
+                    })
+                    ->orderBy('nome')
                     ->paginate(10);
-        return view('receitas', compact('receitas', 'search'));
+        return view('receitas', compact('receitas', 'search', 'letra', 'categoria'));
     }
 
     public function adicionar() {

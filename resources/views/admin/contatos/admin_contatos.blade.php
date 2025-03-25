@@ -2,10 +2,20 @@
 <x-app-layout>
     <div class="container mx-auto py-8">
         <h1 class="text-3xl font-bold mb-6 text-center">Gerenciar Pedidos</h1>
+
+         <form method="GET" action="{{ route('admin.contatos.index') }}" class="mb-4">
+            <label for="status" class="mr-2 font-bold">Filtrar por Status:</label>
+            <select name="status" id="status" class="border rounded-md px-2 pr-6 py-1" onchange="this.form.submit()">
+                <option value="todos" {{ request('status') === null ? 'selected' : '' }}>Todos</option>
+                <option value="pendente" {{ request('status') === 'pendente' ? 'selected' : '' }}>Pendente</option>
+                <option value="aprovada" {{ request('status') === 'aprovada' ? 'selected' : '' }}>Aprovada</option>
+                <option value="rejeitada" {{ request('status') === 'rejeitada' ? 'selected' : '' }}>Rejeitada</option>
+            </select>
+        </form>
+
         @if($contatos->isEmpty())
             <p class="text-center text-gray-600">Nenhum contato encontrado.</p>
         @else
-            <!-- Tabela de contatos -->
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700" style="table-layout: fixed;">
                     <thead class="bg-gray-50 dark:bg-gray-700">
@@ -113,12 +123,12 @@
         document.getElementById('attachmentFrame').src = '';
     }
 
-    let previousStatus; // Variável para armazenar o valor anterior do select
-    let currentSelect; // Armazena o select atual
+    let previousStatus; 
+    let currentSelect; 
 
-    document.querySelectorAll('select').forEach(select => {
+    document.querySelectorAll('select[data-contato-id]').forEach(select => {
         select.addEventListener('focus', function () {
-            previousStatus = this.value; // Armazena o valor antes da alteração
+            previousStatus = this.value; 
             currentSelect = this;
         });
 
@@ -127,9 +137,10 @@
         });
     });
 
+
     document.getElementById('cancelButton').addEventListener('click', function () {
         if (currentSelect) {
-            currentSelect.value = previousStatus; // Restaura o valor anterior
+            currentSelect.value = previousStatus; 
         }
         fecharModal();
     });
@@ -145,11 +156,9 @@
         const form = document.getElementById('formAlterarStatus');
         const inputStatus = document.getElementById('novoStatus');
 
-        // Define o novo status e configura o action do formulário
         inputStatus.value = novoStatus;
         form.action = `/admin/contatos/${contatoId}/atualizar-status`;
 
-        // Abre o modal de confirmação
         modal.classList.remove('hidden');
     }
 

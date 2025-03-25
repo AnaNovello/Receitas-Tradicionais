@@ -8,10 +8,16 @@ use App\Models\Contato;
 class AdminContatoController extends Controller
 {
     // Método para listar todos os contatos na área administrativa
-    public function index()
+    public function index(Request $request)
     {
         // Recupera todos os contatos, ou aplique paginação
-        $contatos = Contato::orderBy('created_at', 'asc')->get();
+        $query = Contato::orderBy('created_at', 'asc');
+
+        if ($request->has('status') && in_array($request->status, ['pendente', 'aprovada', 'rejeitada'])) {
+            $query->where('status', $request->status);
+        }
+        
+        $contatos = $query->get();
         return view('admin.contatos.admin_contatos', compact('contatos'));
     }
 

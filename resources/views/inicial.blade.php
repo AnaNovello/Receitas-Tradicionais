@@ -23,23 +23,33 @@
                         <input type="radio" name="radio-btn" id="radio5">
 
                         <div class="slide first">
-                            <img src="/img/categorias/Norte.png" alt="img" />
+                            <a href="{{ route('receitas', ['categoria' => 'Norte']) }}">
+                                <img src="/img/categorias/Norte.png" alt="Norte" />
+                            </a>
                         </div>
 
                         <div class="slide">
-                            <img src="/img/categorias/Nordeste.png" alt="img" />
+                            <a href="{{ route('receitas', ['categoria' => 'Nordeste']) }}">
+                                <img src="/img/categorias/Nordeste.png" alt="Nordeste" />
+                            </a>
                         </div>
 
                         <div class="slide">
-                            <img src="/img/categorias/Centro_Oeste.png" alt="img" />
+                            <a href="{{ route('receitas', ['categoria' => 'Centro Oeste']) }}">
+                                <img src="/img/categorias/Centro_Oeste.png" alt="Centro Oeste" />
+                            </a>
                         </div>
 
                         <div class="slide">
-                            <img src="/img/categorias/Sudeste.png" alt="img" />
+                            <a href="{{ route('receitas', ['categoria' => 'Sudeste']) }}">
+                                <img src="/img/categorias/Sudeste.png" alt="Sudeste" />
+                            </a>
                         </div>
 
                         <div class="slide">
-                            <img src="/img/categorias/Sul.png" alt="img" />
+                            <a href="{{ route('receitas', ['categoria' => 'Sul']) }}">
+                                <img src="/img/categorias/Sul.png" alt="Sul" />
+                            </a>
                         </div>
 
                         <div class="nav_auto">
