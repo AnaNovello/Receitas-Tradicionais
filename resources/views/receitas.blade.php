@@ -18,10 +18,15 @@
                 <div class="lista_receitas">
                     <ul>
                         @forelse ($receitas as $receita)
-                            <li>
+                            <li class="receita-item">
                                 <a class="l_receita" href="{{ route('receitas.show', $receita->id) }}" target="_self">
-                                    {{ $receita->nome }}
+                                    <span class="nome-receita">{{ $receita->nome }}</span>
                                 </a>
+                                @if($receita->foto)
+                                    <img src="{{ asset('storage/' . $receita->foto) }}" alt="{{ $receita->nome }}" class="img-receita">
+                                @else
+                                    <img src="" alt="Imagem não disponível" class="img-receita">
+                                @endif
                             </li>
                         @empty
                             <li>Nenhuma receita encontrada.</li>

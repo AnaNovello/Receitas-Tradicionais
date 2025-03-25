@@ -134,3 +134,33 @@
     background-color: #d6781f;
 }
 
+.receita-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Mantém os elementos separados */
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+
+.nome-receita {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #5a5a5a;
+    flex-grow: 1; /* Faz o nome ocupar todo o espaço disponível à esquerda */
+    height: 50px; /* Mesma altura da imagem */
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.img-receita {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 15px; /* Dá um espaçamento entre o nome e a imagem */
+}

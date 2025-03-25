@@ -8,7 +8,10 @@
 
 .p_1{
     top: 50px;
-    bottom: 50px;
+}
+
+.p_last{
+    margin-bottom: 50px;
 }
 
 .capa{

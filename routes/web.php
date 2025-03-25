@@ -12,12 +12,6 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminContatoController;
 
 
-/*Route::get('/receitas', function () {
-    return view('receitas'); // Verifique se este arquivo existe em resources/views/
-})->name('receitas'); // Definindo o nome da rota*/
-
-//Route::get('/inicial',[InicialController::class, 'index'])->name('inicial');
-
 Route::get('/',[InicialController::class, 'index'])->name('inicial');
 
 Route::prefix('/receitas')->group(function(){
