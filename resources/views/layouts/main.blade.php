@@ -67,7 +67,7 @@
         <footer class="rodape">
             <div class="rodape_conteudo">
                 <p>Tradição Brasileira &copy; 2025. Todos os direitos reservados.</p>
-                <p>Contato: contato@receitasculturais.com</p>
+                <p>Contato: contato@tradicaobrasileira.com.br</p>
             </div>
         </footer>
 
