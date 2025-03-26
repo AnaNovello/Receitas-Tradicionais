@@ -241,4 +241,28 @@
     background-color: #d6781f;
 }
 
+/* Altera a cor da página ativa para laranja */
+.page-item.active .page-link {
+    background-color: #f48c2b !important; /* Laranja */
+    border-color: #b9691d !important;
+    color: white !important;
+}
+
+/* Mantém o hover da página ativa */
+.page-item.active .page-link:hover {
+    background-color: #d6781f !important; /* Laranja mais escuro */
+    border-color: #a35c19 !important;
+}
+
+/* Mantém o estilo dos outros botões */
+.page-link {
+    color: #333 !important; /* Cor padrão do texto */
+}
+
+/* Efeito hover nos botões da paginação */
+.page-item .page-link:hover {
+    background-color: #d6781f !important; /* Fundo laranja */
+    color: white !important; /* Texto branco */
+    border-color: #a35c19 !important;
+}
 
