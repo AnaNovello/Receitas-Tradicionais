@@ -1,6 +1,6 @@
 <link rel = "stylesheet" type="text/css" href="{{ asset('css/styles_admin_painelDeControle.css') }}">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+@section('title', 'Painel de Controle')
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">

@@ -1,3 +1,5 @@
+@section('title', 'Perfil')
+
 <link rel="stylesheet" href="{{ asset('css/styles_user_painelDeControle.css') }}">
 <x-app-layout>
     <x-slot name="header">

@@ -1,3 +1,4 @@
+@section('title', 'Excluir Receitas')
 <x-app-layout>
     <div class="w-full max-w-2xl mx-auto py-8">
         <h1 class="text-3xl font-bold mb-6 text-center">Excluir Receitas</h1>

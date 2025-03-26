@@ -1,4 +1,5 @@
 <link rel = "stylesheet" type="text/css" href="{{ asset('css/styles_admin_painelDeControle.css') }}">
+@section('title', 'Gerenciar Pedidos')
 <x-app-layout>
     <div class="container mx-auto py-8">
         <h1 class="text-3xl font-bold mb-6 text-center">Gerenciar Pedidos</h1>
