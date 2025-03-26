@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use SebastianBergmann\CodeCoverage\Report\Html\painelDeControle;
 
 class RedirectIfAdmin
 {
@@ -14,8 +14,8 @@ class RedirectIfAdmin
     {
         $user = Auth::user();
 
-        if ($user && $user->usertype === 'admin' && $request->path() === 'dashboard'){
-            return redirect()->route('admin.dashboard');
+        if ($user && $user->usertype === 'admin' && $request->path() === 'painelDeControle'){
+            return redirect()->route('admin.painelDeControle');
         }
 
         return $next($request);

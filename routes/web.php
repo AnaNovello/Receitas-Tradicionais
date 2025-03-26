@@ -8,7 +8,7 @@ use App\Http\Controllers\ReceitaController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\InicialController;
 use App\Http\Controllers\ContatoController;
-use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminpainelDeControleController;
 use App\Http\Controllers\AdminContatoController;
 
 
@@ -30,13 +30,13 @@ Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
 // Para usuários comuns
 Route::middleware(['auth', 'verified', 'redirectIfAdmin'])->group(function(){
-    Route::get('/dashboard', [ProfileController::class, 'show'])->name('dashboard');
+    Route::get('/painelDeControle', [ProfileController::class, 'show'])->name('painelDeControle');
 });
 
 // Para administradores
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard'); // Alterando o controller conforme necessário
-    Route::get('/admin/dashboard/filter-status', [AdminDashboardController::class, 'filterStatus'])->name('admin.filterStatus');
+    Route::get('/admin/painelDeControle', [AdminpainelDeControleController::class, 'index'])->name('admin.painelDeControle'); // Alterando o controller conforme necessário
+    Route::get('/admin/painelDeControle/filter-status', [AdminpainelDeControleController::class, 'filterStatus'])->name('admin.filterStatus');
 
 });
 

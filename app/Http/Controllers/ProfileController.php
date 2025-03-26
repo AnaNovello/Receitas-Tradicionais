@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Illuminate\View\View;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use SebastianBergmann\CodeCoverage\Report\Html\painelDeControle;
 use App\Models\User;
 use App\Models\Receita;
 
@@ -27,7 +27,7 @@ class ProfileController extends Controller
             $query->where('user_id', $user->id);
         })->get();
     
-        return view('dashboard', compact('user', 'receitasSalvas'));
+        return view('painelDeControle', compact('user', 'receitasSalvas'));
     }
 
     public function edit(Request $request): View

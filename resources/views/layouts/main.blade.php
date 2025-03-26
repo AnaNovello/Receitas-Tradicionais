@@ -44,7 +44,7 @@
                 @if (Route::has('login'))
                     <div class="login">
                         @auth
-                            <a href="{{ url('/dashboard') }}">{{ Auth::user()->name }}</a>
+                            <a href="{{ url('/painelDeControle') }}">{{ Auth::user()->name }}</a>
                         @else
                             <a href="{{ route('login') }}">Login</a>
                             @if (Route::has('register'))

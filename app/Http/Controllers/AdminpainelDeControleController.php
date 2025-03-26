@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Receita;
 
-class AdminDashboardController extends Controller
+class AdminpainelDeControleController extends Controller
 {
     public function index()
     {
         $contatos = \App\Models\Contato::where('status', 'pendente')->orderBy('created_at', 'asc')->paginate(10);
         $user = Auth::user();
         $receitas = Receita::orderBy('created_at', 'desc')->get();
-        return view('admin.dashboard', compact('user', 'contatos', 'receitas'));
+        return view('admin.painelDeControle', compact('user', 'contatos', 'receitas'));
     }
 
     public function filterStatus(Request $request){

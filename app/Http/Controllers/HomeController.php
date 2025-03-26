@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function index(){
         $user = Auth::user();
-        return view ('admin.dashboard', compact('user'));
+        return view ('admin.painelDeControle', compact('user'));
     }
 }

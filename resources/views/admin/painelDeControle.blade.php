@@ -1,4 +1,4 @@
-<link rel = "stylesheet" type="text/css" href="{{ asset('css/styles_admin_dashboard.css') }}">
+<link rel = "stylesheet" type="text/css" href="{{ asset('css/styles_admin_painelDeControle.css') }}">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <x-app-layout>

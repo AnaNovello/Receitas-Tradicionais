@@ -94,7 +94,7 @@ class ReceitaController extends Controller
         $receita->save();
 
         // Redirecionar ou retornar uma resposta de sucesso
-        return redirect()->route('admin.dashboard')->with('success', 'Receita adicionada com sucesso!');
+        return redirect()->route('admin.painelDeControle')->with('success', 'Receita adicionada com sucesso!');
     }
 
     public function editar($id){
@@ -140,7 +140,7 @@ class ReceitaController extends Controller
 
         $receita->save();
 
-        return redirect()->route('admin.dashboard')->with('success', 'Receita atualizada com sucesso!');
+        return redirect()->route('admin.painelDeControle')->with('success', 'Receita atualizada com sucesso!');
     }
 
     public function destroy($id){
@@ -153,7 +153,7 @@ class ReceitaController extends Controller
 
         $receita->delete();
 
-        return redirect()->route('admin.dashboard')->with('success', 'Receita excluída com sucesso!');
+        return redirect()->route('admin.painelDeControle')->with('success', 'Receita excluída com sucesso!');
     }
 
     public function atualizarStatus(Request $request, $id){
