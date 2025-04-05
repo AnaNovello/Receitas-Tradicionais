@@ -26,7 +26,7 @@
                     @endforeach
                 </div>
                 <form action="{{ route('receitas') }}" method="GET" class="form_filtros">
-                    <label for="categoria">Filtrar por categoria:</label>
+                    <label for="categoria">Filtrar por região:</label>
                     <select name="categoria" id="categoria">
                         <option value="">Todas</option>
                         <option value="Norte" {{ request('categoria') == 'Norte' ? 'selected' : '' }}>Norte</option>

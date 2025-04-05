@@ -36,9 +36,16 @@
             <!-- Coluna do Texto -->
             <div class="recipe-text">
                 <h1>{{ $receita->nome }}</h1>
-                <p><strong>Categoria:</strong> {{ $receita->categoria }}</p>
+                <p><strong>Região:</strong> {{ $receita->categoria }}</p>
                 <p><strong>Descrição:</strong> {{ $receita->descricao }}</p>
-                <p><strong>Ingredientes:</strong> {{ $receita->ingredientes }}</p>
+                <p><strong>Ingredientes:</strong></p>
+                    <ul class="list-disc list-inside">
+                        @foreach (explode('-', $receita->ingredientes) as $ingrediente)
+                            @if (trim($ingrediente) !== '')
+                                <li>{{ trim($ingrediente) }}</li>
+                            @endif
+                        @endforeach
+                    </ul>
                 <p><strong>Modo de Preparo:</strong> {{ $receita->preparo }}</p>
             </div>
         </div>

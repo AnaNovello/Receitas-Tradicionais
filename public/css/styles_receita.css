@@ -111,3 +111,13 @@
     background-color: red;
     color: white;
 }
+
+.recipe-text ul {
+    list-style: none;
+    padding-left: 1em;
+}
+
+.recipe-text ul li::before {
+    content: "-";
+    margin-right: 0.5em;
+}

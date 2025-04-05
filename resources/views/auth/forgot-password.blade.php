@@ -1,3 +1,4 @@
+@section('title', 'Recuperar Senha')
 <x-guest-layout>
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
         {{ __('Esqueceu sua senha? Nos informe seu endereço de e-mail e enviaremos um link de redefinição de senha para que você possa escolher uma nova.') }}
