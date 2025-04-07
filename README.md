@@ -33,9 +33,10 @@ A plataforma permite que usuários explorem receitas, salvem suas favoritas, ent
 
 ## ⚙️ Instalação e Execução
 
-Siga os passos abaixo para executar o projeto localmente:
+Siga os passos abaixo para executar o projeto localmente. **Tenha certeza de ter instalado o Laravel e o PHP em sua máquina antes de prosseguir**
 
 ```bash
+
 # Clone o repositório
 git clone https://github.com/seu-usuario/seu-projeto.git
 
