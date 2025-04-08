@@ -36,11 +36,7 @@ A plataforma permite que usuários explorem receitas, salvem suas favoritas, ent
 
 ## ⚙️ Instalação e Execução
 
-**Para executar o projeto localmente,tenha certeza que sua máquina tenha:**
-**- Laravel**
-**- PHP**
-**-Postgresql**
-**- Node.js**
+**Tenha certeza que sua máquina tenha o Laravel, PHP, Postgresql e Node.js instalados**
 
 ```bash
 # Clone o repositório
