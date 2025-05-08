@@ -46,12 +46,9 @@
                 </div>
             @endif
         </div>
-
-        <!-- Foto de Perfil -->
         <div>
             <x-input-label for="foto" :value="__('Foto de Perfil')" />
-            
-            <!-- Mostrar a foto atual -->
+
             @if ($user->foto)
                 <img src="{{ asset('storage/' . $user->foto) }}" alt="Foto de Perfil" class="w-20 h-20 rounded-full object-cover mt-2">
             @endif

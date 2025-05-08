@@ -137,7 +137,7 @@
 .receita-item {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Mantém os elementos separados */
+    justify-content: space-between; 
     border-radius: 5px;
     margin-bottom: 20px;
 
@@ -148,7 +148,7 @@
     text-transform: uppercase;
     color: #5a5a5a;
     flex-grow: 1; /* Faz o nome ocupar todo o espaço disponível à esquerda */
-    height: 50px; /* Mesma altura da imagem */
+    height: 50px; 
     display: flex;
     align-items: center;
     padding: 0 10px;
@@ -162,7 +162,7 @@
     object-fit: cover;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-left: 15px; /* Dá um espaçamento entre o nome e a imagem */
+    margin-left: 15px; 
 }
 
 .filtro-alfabeto {
@@ -194,7 +194,7 @@
     background-color: #b4651b;
 }
 
-/* Estiliza o contêiner do filtro de categoria */
+
 .form_filtros {
     display: flex;
     align-items: center;
@@ -202,14 +202,13 @@
     margin-top: 15px;
 }
 
-/* Estiliza o rótulo (label) */
 .form_filtros label {
     font-weight: bold;
     font-size: 16px;
     color: #333;
 }
 
-/* Estiliza o select */
+
 .form_filtros select {
     padding: 5px 10px;
     border: 2px solid #ccc;
@@ -219,12 +218,12 @@
     transition: border-color 0.3s;
 }
 
-/* Muda a borda ao passar o mouse */
+
 .form_filtros select:hover {
     border-color: #555;
 }
 
-/* Estiliza o botão de filtro */
+
 .btn_filtrar {
     background-color: #f48c2b;
     color: white;
@@ -236,33 +235,29 @@
     transition: background-color 0.3s;
 }
 
-/* Muda a cor do botão ao passar o mouse */
 .btn_filtrar:hover {
     background-color: #d6781f;
 }
 
-/* Altera a cor da página ativa para laranja */
 .page-item.active .page-link {
-    background-color: #f48c2b !important; /* Laranja */
+    background-color: #f48c2b !important; 
     border-color: #b9691d !important;
     color: white !important;
 }
 
-/* Mantém o hover da página ativa */
 .page-item.active .page-link:hover {
-    background-color: #d6781f !important; /* Laranja mais escuro */
+    background-color: #d6781f !important; 
     border-color: #a35c19 !important;
 }
 
-/* Mantém o estilo dos outros botões */
 .page-link {
-    color: #333 !important; /* Cor padrão do texto */
+    color: #333 !important; 
 }
 
-/* Efeito hover nos botões da paginação */
+
 .page-item .page-link:hover {
-    background-color: #d6781f !important; /* Fundo laranja */
-    color: white !important; /* Texto branco */
+    background-color: #d6781f !important; 
+    color: white !important; 
     border-color: #a35c19 !important;
 }
 

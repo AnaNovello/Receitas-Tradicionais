@@ -16,7 +16,7 @@ html, body {
 }
 
 main.col_100.menu_urls {
-    flex: 1 0 auto; /* cresce para ocupar o espaço disponível */
+    flex: 1 0 auto; 
 }
 
 

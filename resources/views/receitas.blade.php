@@ -8,14 +8,12 @@
     <header class="header_receitas">
         <div class="receitas">
             <div class="header_3">
-            
-                <!-- Campo de Busca -->
+
                 <form action="{{ route('receitas') }}" method="GET" class="form_busca">
                     <input type="text" name="search" placeholder="Buscar receita..." value="{{ request('search') }}" class="input_busca">
                     <button type="submit" class="btn_busca">Buscar</button>
                 </form>
                 
-                <!-- Filtro de ordenação alfabética -->
                 <div class="filtro-alfabeto">
                     <span>Ordenar por:</span>
                     @foreach(range('A', 'Z') as $letra)

@@ -4,6 +4,7 @@
 
 @section('content')
     <link rel = "stylesheet" type="text/css" href="./Css/styles_contato.css">
+    
     <header class="header_ranking">
         <main class="ranking">
             <div class="header_3">
@@ -70,19 +71,7 @@
                 
             </div>
         </main>
-        
+        <script src="{{ asset('js/contador_caracter.js') }}"></script>
     </header>
-
-    <script>
-        // Captura o textarea e o contador de caracteres
-        const descricaoField = document.getElementById('descricao');
-        const charCount = document.getElementById('charCount');
-        
-        // Função para atualizar o contador de caracteres
-        descricaoField.addEventListener('input', function () {
-            const currentLength = descricaoField.value.length;
-            charCount.textContent = `${currentLength}/250`;
-        });
-    </script>
 
 @endsection

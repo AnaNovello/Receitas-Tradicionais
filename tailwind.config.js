@@ -9,6 +9,9 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
+    safelist: [
+        'hover-excluir'
+    ],
     theme: {
         extend: {
             fontFamily: {

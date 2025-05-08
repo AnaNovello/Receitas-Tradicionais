@@ -81,33 +81,5 @@
 </div>
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Seleciona todos os formulários de exclusão
-        const deleteForms = document.querySelectorAll('.delete-form');
-        deleteForms.forEach(function(form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault(); // Impede a submissão imediata
-                openConfirmModal(form);
-            });
-        });
-    });
-
-    function openConfirmModal(form) {
-        const modal = document.getElementById('confirmDeleteModal');
-        modal.classList.remove('hidden');
-        
-        // Define o comportamento do botão "Excluir" no modal
-        const confirmButton = document.getElementById('confirmDeleteButton');
-        // Remove qualquer event listener anterior
-        confirmButton.onclick = function() {
-            form.submit();  // Envia o formulário se confirmado
-        }
-    }
-
-    function closeConfirmModal() {
-        const modal = document.getElementById('confirmDeleteModal');
-        modal.classList.add('hidden');
-    }
-</script>
+<script src="{{ asset('js/excluirRegistro.js') }}"></script>
 

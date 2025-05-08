@@ -68,7 +68,6 @@
                     <div class="mb-4 flex items-center justify-between">
                         <h2 class="text-2xl font-bold">Status de Envios</h2>
 
-                        <!-- Filtro de Status -->
                         <div class="mb-4">
                             <label for="statusFilter" class="text-sm font-medium text-gray-700 dark:text-gray-300">Filtrar por:</label>
                             <select id="statusFilter" class="mt-2 block w-full py-2 px-3 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-gray-300">
@@ -144,7 +143,6 @@
                         </a>
                     </div>
 
-                     <!-- Tabela de contatos -->
                     <div class="tabela-envios">
                         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                             <thead class="bg-gray-50 dark:bg-gray-700">
@@ -196,7 +194,10 @@
 
     <!-- Espaço extra na mesma cor de fundo (cinza) -->
     <div class="h-16 bg-gray-100"></div>
-
+    <script>
+        const filterStatusUrl = "{{ route('admin.filterStatus') }}";
+    </script>
+    <script src="{{ asset('js/painelControleAdm.js') }}"></script>
 </x-app-layout>
 
 <!-- Modal para exibir o anexo -->
@@ -206,54 +207,3 @@
         <button class="close-button absolute top-2 right-2 text-gray-500 hover:text-gray-800" onclick="closeModal()">Fechar</button>
     </div>
 </div>
-
-<script>
-    function openAttachmentModal(url) {
-        document.getElementById('attachmentFrame').src = url;
-        document.getElementById('attachmentModal').style.display = 'flex';
-    }
-
-    function closeModal() {
-        document.getElementById('attachmentModal').style.display = 'none';
-        document.getElementById('attachmentFrame').src = '';
-    }
-
-    document.querySelectorAll('.descricao').forEach(function(element) {
-        let descricao = element.innerText;
-        if (descricao.length > 120) {
-            let breakPoint = descricao.substring(120).indexOf(' ');
-            if (breakPoint !== -1) {
-                let firstPart = descricao.substring(0, 120 + breakPoint);
-                let secondPart = descricao.substring(120 + breakPoint + 1);
-                element.innerHTML = firstPart + '<br>' + secondPart;
-            }
-        }
-    });
-
-    $(document).ready(function() {
-        $('#statusFilter').change(function() {
-            var status = $(this).val();
-
-            $.ajax({
-                url: '{{ route("admin.filterStatus") }}', // URL que vai chamar o método no Controller
-                type: 'GET', // Tipo da requisição (GET)
-                data: { status: status }, // Envia o status como parâmetro
-                beforeSend: function(){
-                    $('#table-container').empty();
-                },
-                success: function(response) {
-                    if(status === ""){
-                        location.reload();
-                    }else{
-                         // Se a requisição for bem-sucedida, atualiza a tabela com a nova view
-                        $('#table-container').html(response); // Coloca o HTML da tabela dentro do elemento com id 'table-container'
-                    }
-                },
-                error: function(xhr, status, error) {
-                    console.error('Erro na requisição AJAX:', error);
-                }
-            });
-        });
-    });
-
-</script>

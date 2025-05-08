@@ -59,8 +59,7 @@
                                     @endif">
                                     <select 
                                         class="border rounded-md px-2 pr-6 py-1 w-full"
-                                        data-contato-id="{{ $contato->id }}" 
-                                        onchange="confirmarAlteracaoStatus(this, '{{ $contato->id }}')">
+                                        data-contato-id="{{ $contato->id }}">
                                         <option value="pendente" class="text-yellow-500" {{ $contato->status == 'pendente' ? 'selected' : '' }}>Pendente</option>
                                         <option value="aprovada" class="text-green-500" {{ $contato->status == 'aprovada' ? 'selected' : '' }}>Aprovada</option>
                                         <option value="rejeitada" class="text-red-500" {{ $contato->status == 'rejeitada' ? 'selected' : '' }}>Rejeitada</option>
@@ -77,6 +76,13 @@
             </div>
         @endif
     </div>
+
+    <script>
+        const baseStatusUpdateUrl = "/admin/contatos/";
+    </script>
+
+    <script src="{{ asset('js/contatosAdmin.js') }}"></script>
+
 </x-app-layout>
 
 <!-- Modal para exibir o anexo -->
@@ -107,64 +113,5 @@
             </form>
         </div>
     </div>
+    
 </div>
-
-
-
-
-
-<script>
-    function openAttachmentModal(url) {
-        document.getElementById('attachmentFrame').src = url;
-        document.getElementById('attachmentModal').style.display = 'flex';
-    }
-
-    function closeModal() {
-        document.getElementById('attachmentModal').style.display = 'none';
-        document.getElementById('attachmentFrame').src = '';
-    }
-
-    let previousStatus; 
-    let currentSelect; 
-
-    document.querySelectorAll('select[data-contato-id]').forEach(select => {
-        select.addEventListener('focus', function () {
-            previousStatus = this.value; 
-            currentSelect = this;
-        });
-
-        select.addEventListener('change', function () {
-            confirmarAlteracaoStatus(this, this.dataset.contatoId);
-        });
-    });
-
-
-    document.getElementById('cancelButton').addEventListener('click', function () {
-        if (currentSelect) {
-            currentSelect.value = previousStatus; 
-        }
-        fecharModal();
-    });
-
-    document.getElementById('confirmButton').addEventListener('click', function () {
-        previousStatus = null;
-    });
-
-
-    function confirmarAlteracaoStatus(selectElement, contatoId) {
-        const novoStatus = selectElement.value;
-        const modal = document.getElementById('modalConfirmacao');
-        const form = document.getElementById('formAlterarStatus');
-        const inputStatus = document.getElementById('novoStatus');
-
-        inputStatus.value = novoStatus;
-        form.action = `/admin/contatos/${contatoId}/atualizar-status`;
-
-        modal.classList.remove('hidden');
-    }
-
-    function fecharModal() {
-        document.getElementById('modalConfirmacao').classList.add('hidden');
-    }
-
-</script>

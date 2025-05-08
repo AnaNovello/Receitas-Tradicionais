@@ -58,6 +58,8 @@
         </main>
         
         <main class="flex-1">
+            <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
+
             @yield('content')
         </main>
 

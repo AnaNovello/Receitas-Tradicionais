@@ -59,14 +59,5 @@
     </div>
 </x-app-layout>
 
-<script>
-    // Captura o textarea e o contador de caracteres
-    const descricaoField = document.getElementById('descricao');
-    const charCount = document.getElementById('charCount');
-    
-    // Função para atualizar o contador de caracteres
-    descricaoField.addEventListener('input', function () {
-        const currentLength = descricaoField.value.length;
-        charCount.textContent = `${currentLength}/250`;
-    });
-</script>
+<script src="{{ asset('js/contador_caracter.js') }}"></script>
+

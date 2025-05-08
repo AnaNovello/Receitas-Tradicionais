@@ -6,10 +6,9 @@
     <link rel="stylesheet" href="{{ asset('css/styles_receita.css') }}">
     <div class="container mx-auto py-8">
         <div class="recipe-details">
-            <!-- Coluna da Imagem -->
             <div class="recipe-image">
                 @if($receita->foto)
-                    <img src="{{ asset('storage/' . $receita->foto) }}" alt="Foto da Receita">
+                    <img src="{{ asset('storage/' . $receita->foto) }}" alt="Foto da Receita h-300 w-300">
                 @endif
 
                 @if(Auth::check() && Auth::user()->usertype === 'user')
@@ -33,7 +32,6 @@
 
             </div>
             
-            <!-- Coluna do Texto -->
             <div class="recipe-text">
                 <h1>{{ $receita->nome }}</h1>
                 <p><strong>Região:</strong> {{ $receita->categoria }}</p>
@@ -50,16 +48,6 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('js/receita_salva.js') }}"></script>
 @endsection
 
-<script>
-    function mudarTexto(element) {
-        element.innerText = "Excluir da Coleção";
-        element.classList.add("hover-excluir");
-    }
-
-    function voltarTexto(element) {
-        element.innerText = "Receita Salva";
-        element.classList.remove("hover-excluir");
-    }
-</script>
